@@ -104,7 +104,7 @@ The script exectutes 3 main processing to compute the diff.
 Swagger spec 2.0 allows to define global values for `parameters`, `security`, `schemes`, `consumes` and `produces` than can then be ovverriden when needed.
 This step, inlines these definitions in every paths objects.
 
-### Resolve References
+#### Resolve References
 
 This step resolve JSON references and inline those data.
 
