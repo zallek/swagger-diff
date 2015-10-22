@@ -1,6 +1,14 @@
+import deference from './inline';
 import inline from './inline';
 
 
-export function prepareSwaggerSpec(spec) {
-  return inline(spec);
+/**
+ * @param  {Object} spec
+ * @return {Promise}
+ */
+export default function prepareSpec(spec) {
+  return dereference(spec)
+    .then(output => {
+      return inline(output);
+    });
 }
