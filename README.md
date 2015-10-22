@@ -1,5 +1,7 @@
 # swagger-diff
 
+[![Build Status][travis-image]][travis-url]
+
 This package provides utils and CLI to compute the diff between to swagger spec 2.0. Output diff can be configured according to type of version change.
 
 
@@ -115,3 +117,6 @@ Awesome [diff](https://github.com/flitbit/diff) lib is used to compute deep raw 
 ### Exectute Rules
 Exectute each rule on each raw diff.
 
+
+[travis-url]: https://travis-ci.org/zallek/swagger-diff
+[travis-image]: https://travis-ci.org/zallek/swagger-diff.svg
