@@ -1,8 +1,8 @@
 {
-  "name": "botify-sdk-middlewares",
-  "version": "0.1.0",
-  "description": "Botify JS SDK middlewares",
-  "author": "Botify <labs@botify.com>",
+  "name": "swagger-diff",
+  "version": "0.0.0",
+  "description": "Swagger Diff Utils",
+  "author": "Nicolas Fortin <nicolas.fortin37@gmail.com>",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib dist",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/botify-hq/botify-sdk-jsplus.git"
+    "url": "git://github.com/zallek/swagger-diff.git"
   },
   "dependencies": {
   },
