@@ -1,0 +1,9 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-unused-expressions": 0 // doesn't work with chai (to.be.empty)
+  }
+}

@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e # Any subsequent(*) commands which fail will cause the shell script to exit immediately
+cd "$(dirname $0)/.."
+
+echo -e "Linting..."
+npm run lint
+
+echo "SUCCESS"
+exit 0
