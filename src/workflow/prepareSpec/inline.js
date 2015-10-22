@@ -33,7 +33,7 @@ export function inlineParameters(spec) {
   return {
     ...spec,
     paths,
-  }
+  };
 }
 
 export function inlineSecurity(spec) {

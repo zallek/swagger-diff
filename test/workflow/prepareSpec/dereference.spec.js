@@ -1,12 +1,11 @@
 import chai from 'chai';
-import forEach from 'lodash.foreach';
 
 import dereference from '../../../src/workflow/prepareSpec/dereference';
 
 
 describe('PrepareSwaggerSpec: dereference', () => {
   const tests = [
-    'must deference every definition'
+    'must deference every definition',
   ];
 
   tests.forEach((test, i) => {
@@ -14,7 +13,7 @@ describe('PrepareSwaggerSpec: dereference', () => {
       const input = require(`./dereference/${i}-input`);
       const expectedOutput = require(`./dereference/${i}-output`);
       dereference(input)
-        .then(output => {
+        .then(output => {
           chai.expect(output).to.deep.equal(expectedOutput);
           done();
         })

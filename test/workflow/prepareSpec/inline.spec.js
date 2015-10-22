@@ -12,7 +12,7 @@ describe('PrepareSwaggerSpec: inline', () => {
       'must work when no global paramters',
       'must work when no specific paramters',
       'must create an empty pamameters array if no paramters',
-    ]
+    ],
   };
 
   forEach(tests, (functionTests, functionName) => {
