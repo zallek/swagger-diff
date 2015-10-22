@@ -1,0 +1,9 @@
+{
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "get": {
+        "parameters": []
+      }
+    }
+  }
+}
