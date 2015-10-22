@@ -1,0 +1,291 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "parameters": [
+        {
+          "required": true,
+          "type": "string",
+          "name": "username",
+          "in": "path"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "required": [
+                "name",
+                "screen_name",
+                "domain",
+                "path",
+                "owner"
+              ],
+              "type": "object",
+              "properties": {
+                "name": {
+                  "readOnly": true,
+                  "type": "string",
+                  "description": ""
+                },
+                "screen_name": {
+                  "readOnly": true,
+                  "type": "string",
+                  "description": ""
+                },
+                "domain": {
+                  "readOnly": false,
+                  "type": "string",
+                  "description": "e.g. www.mysite.com"
+                },
+                "path": {
+                  "readOnly": true,
+                  "type": "string",
+                  "description": ""
+                },
+                "owner": {
+                  "readOnly": false,
+                  "description": "",
+                  "required": [
+                    "login",
+                    "is_organization"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "login": {
+                      "readOnly": true,
+                      "type": "string",
+                      "description": ""
+                    },
+                    "is_organization": {
+                      "readOnly": true,
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    },
+                    "crawl": {
+                      "readOnly": true,
+                      "required": [
+                        "id",
+                        "user"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "readOnly": true,
+                          "type": "integer",
+                          "description": "",
+                          "format": "int64"
+                        },
+                        "user": {
+                          "readOnly": false,
+                          "description": "",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "type": "object",
+              "description": "default payload for object for all HTTP codes that are not covered individually",
+              "properties": {
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Error Message"
+                    },
+                    "error_code": {
+                      "type": "string",
+                      "description": "Error Code"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "List of allowed domains for a defined username.",
+        "parameters": [],
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "text/html"
+        ],
+        "summary": "List of allowed domains for a defined username",
+        "operationId": "getUserAllowedDomains"
+      }
+    }
+  },
+  "definitions": {
+    "DefaultPayload": {
+      "type": "object",
+      "description": "default payload for object for all HTTP codes that are not covered individually",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Error Message"
+            },
+            "error_code": {
+              "type": "string",
+              "description": "Error Code"
+            }
+          }
+        }
+      }
+    },
+    "SiteSerializer": {
+      "required": [
+        "name",
+        "screen_name",
+        "domain",
+        "path",
+        "owner"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string",
+          "description": ""
+        },
+        "screen_name": {
+          "readOnly": true,
+          "type": "string",
+          "description": ""
+        },
+        "domain": {
+          "readOnly": false,
+          "type": "string",
+          "description": "e.g. www.mysite.com"
+        },
+        "path": {
+          "readOnly": true,
+          "type": "string",
+          "description": ""
+        },
+        "owner": {
+          "readOnly": false,
+          "description": "",
+          "required": [
+            "login",
+            "is_organization"
+          ],
+          "type": "object",
+          "properties": {
+            "login": {
+              "readOnly": true,
+              "type": "string",
+              "description": ""
+            },
+            "is_organization": {
+              "readOnly": true,
+              "type": "integer",
+              "description": "",
+              "format": "int64"
+            },
+            "crawl": {
+              "readOnly": true,
+              "required": [
+                "id",
+                "user"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "readOnly": true,
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "user": {
+                  "readOnly": false,
+                  "description": "",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "OwnerSerializer": {
+      "required": [
+        "login",
+        "is_organization"
+      ],
+      "type": "object",
+      "properties": {
+        "login": {
+          "readOnly": true,
+          "type": "string",
+          "description": ""
+        },
+        "is_organization": {
+          "readOnly": true,
+          "type": "integer",
+          "description": "",
+          "format": "int64"
+        },
+        "crawl": {
+          "readOnly": true,
+          "required": [
+            "id",
+            "user"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "readOnly": true,
+              "type": "integer",
+              "description": "",
+              "format": "int64"
+            },
+            "user": {
+              "readOnly": false,
+              "description": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CrawlDetailSerializer": {
+      "required": [
+        "id",
+        "user"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "readOnly": true,
+          "type": "integer",
+          "description": "",
+          "format": "int64"
+        },
+        "user": {
+          "readOnly": false,
+          "description": "",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
