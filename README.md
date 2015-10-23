@@ -2,13 +2,20 @@
 
 [![Build Status][travis-image]][travis-url]
 
-This package provides utils and CLI to compute the diff between to swagger spec 2.0. Output diff can be configured according to type of version change.
+This package provides utils and CLI to compute the diff between two swagger API specifications. Output diff can be configured according to version change.
 
 
 ## Compatilibity
 
-It only works on [swagger spec 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) files.
+Supports only [swagger spec 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md).
 
+
+## Usage
+The binary allows you to use swagger-diff in CLI. 
+```bash
+$ swagger-diff <old> <new>
+```
+It prints the diff between old and new swagger files according to [configuration](https://github.com/zallek/swagger-diff#configuration) and returns false if any diff "error".
 
 ## Diffs
 Swagger-Diff defines rules that performs ONE type of diff checking. These rules are separated in 2 groups:
@@ -50,12 +57,14 @@ It's also possible to define different level of logs according to version change
     "break": {
       "major": 2,
       "minor": 3,
-      "patch": 3
+      "patch": 3,
+      "nochange": 3
     },
     "smooth": {
       "major": 0,
       "minor": 1,
-      "patch": 2
+      "patch": 2,
+      "nochange": 3
     }
   }
 }
@@ -83,12 +92,14 @@ YOu can also configure specific level of level for some rules.
       "break": {
         "major": 2,
         "minor": 3,
-        "patch": 3
+        "patch": 3,
+        "nochange": 3
       },
       "smooth": {
         "major": 0,
         "minor": 1,
-        "patch": 2
+        "patch": 2,
+        "nochange": 3
       }
     }
   }
@@ -97,22 +108,22 @@ YOu can also configure specific level of level for some rules.
 
 ## How it works
 
-The script exectutes 3 main processing to compute the diff.
+To compute the diff, it exectutes a workflow composed of 3 main steps.
 
 ### Preparation
 
+#### Dereference
+
+Resolve JSON references and dereference URIs.
+
 #### Inline global definitions
 
-Swagger spec 2.0 allows to define global values for `parameters`, `security`, `schemes`, `consumes` and `produces` than can then be ovverriden when needed.
-This step, inlines these definitions in every paths objects.
+Swagger spec 2.0 allows to specify global definitions for `parameters`, `security`, `schemes`, `consumes` and `produces` that can then be overriden when needed.
 
-#### Resolve References
-
-This step resolve JSON references and inline those data.
-
+This step, inline these definitions in every paths objects.
 
 ### Compute Raw diff
-Awesome [diff](https://github.com/flitbit/diff) lib is used to compute deep raw diff.
+[diff](https://github.com/flitbit/diff) lib is used to compute deep raw diff.
 
 ### Exectute Rules
 Exectute each rule on each raw diff.
