@@ -11,7 +11,7 @@ Supports only [swagger spec 2.0](https://github.com/swagger-api/swagger-spec/blo
 
 
 ## Usage
-The binary allows you to use swagger-diff in CLI. 
+The binary allows you to use swagger-diff in CLI.
 ```bash
 $ swagger-diff <old> <new>
 ```
@@ -75,7 +75,7 @@ It's also possible to define different level of logs according to version change
 ```
 3-error
 2-warning
-1-log
+1-info
 0-ignore
 ```
 
@@ -89,18 +89,10 @@ YOu can also configure specific level of level for some rules.
       "smooth": 2
     },
     "add-path": {
-      "break": {
-        "major": 2,
-        "minor": 3,
-        "patch": 3,
-        "nochange": 3
-      },
-      "smooth": {
-        "major": 0,
-        "minor": 1,
-        "patch": 2,
-        "nochange": 3
-      }
+      "major": 2,
+      "minor": 3,
+      "patch": 3,
+      "nochange": 3
     }
   }
 }
