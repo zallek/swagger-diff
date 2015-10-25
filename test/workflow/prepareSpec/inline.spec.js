@@ -6,10 +6,17 @@ describe('PrepareSwaggerSpec: inline', () => {
   const tests = {
     inlineParameters: [
       'must inline every definition',
-      'must not remove others pameters',
-      'must work when no global paramters',
-      'must work when no specific paramters',
-      'must create an empty pamameters array if no paramters',
+      'must merge definitions',
+      'must work when no global definition',
+      'must work when no specific definition',
+      'must create an empty definition array if no definition',
+    ],
+    inlineGlobals: [
+      'must inline every definition',
+      'must not modify specific definition',
+      'must work when no global definition',
+      'must work when no specific definition',
+      'must create an empty definition array if no definition',
     ],
   };
 

@@ -1,5 +1,6 @@
 import compose from '../../utils/compose';
 import dereference from './dereference';
+import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
 
 
@@ -11,11 +12,8 @@ export default function prepareSpec(spec) {
   return dereference(spec)
     .then(dereferencedSpec => {
       return compose(
-        inlineParameters,
-        inlineSecurity,
-        inlineSchemes,
-        inlineConsumes,
-        inlineProduces
+        inlineGlobals,
+        inlineParameters
       )(dereferencedSpec);
     });
 }
