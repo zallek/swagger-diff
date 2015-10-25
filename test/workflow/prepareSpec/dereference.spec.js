@@ -22,4 +22,14 @@ describe('PrepareSwaggerSpec: dereference', () => {
         });
     });
   });
+
+  it('must not deference circular definitions', (done) => {
+      const input = require(`./dereference/circular-input`);
+      dereference(input)
+        .catch(err => {
+          chai.expect(err).to.be.instanceof(ReferenceError);
+          chai.expect(err.message).to.match(/^Circular \$ref pointer found/);
+          done();
+        });
+    });
 });

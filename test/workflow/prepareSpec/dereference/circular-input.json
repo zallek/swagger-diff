@@ -1,0 +1,61 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "parameters": [
+        {
+          "required": true,
+          "type": "string",
+          "name": "username",
+          "in": "path"
+        }
+      ],
+      "get": {
+        "responses": {
+          "default": {
+            "description": "error payload",
+            "schema": {
+              "$ref": "#/definitions/Filter"
+            }
+          }
+        },
+        "description": "List of allowed domains for a defined username.",
+        "parameters": [],
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "text/html"
+        ],
+        "summary": "List of allowed domains for a defined username",
+        "operationId": "getUserAllowedDomains"
+      }
+    }
+  },
+  "definitions": {
+    "Filter": {
+      "type": "object",
+      "description": "Recursive Filter",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Message"
+            },
+            "filter": {
+              "description": "Children",
+              "$ref": "#/definitions/Filter"
+            }
+          }
+        }
+      }
+    }
+  }
+}
