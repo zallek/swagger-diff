@@ -1,8 +1,6 @@
 import chai from 'chai';
 import forEach from 'lodash.foreach';
 
-import * as inline from '../../../src/workflow/prepareSpec/inline';
-
 
 describe('PrepareSwaggerSpec: inline', () => {
   const tests = {
@@ -15,13 +13,14 @@ describe('PrepareSwaggerSpec: inline', () => {
     ],
   };
 
-  forEach(tests, (functionTests, functionName) => {
-    describe(functionName, () => {
-      functionTests.forEach((test, i) => {
+  forEach(tests, (moduleTests, moduleName) => {
+    const module = require(`../../../src/workflow/prepareSpec/${moduleName}`);
+    describe(moduleName, () => {
+      moduleTests.forEach((test, i) => {
         it(test, () => {
-          const input = require(`./${functionName}/${i}-input`);
-          const expectedOutput = require(`./${functionName}/${i}-output`);
-          chai.expect(inline[functionName](input)).to.deep.equal(expectedOutput);
+          const input = require(`./${moduleName}/${i}-input`);
+          const expectedOutput = require(`./${moduleName}/${i}-output`);
+          chai.expect(module(input)).to.deep.equal(expectedOutput);
         });
       });
     });
