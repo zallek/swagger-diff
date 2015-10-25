@@ -27,6 +27,8 @@
     "lodash.foreach": "^3.0.3",
     "lodash.mapvalues": "^3.0.1",
     "lodash.omit": "^3.1.0",
+    "lodash.pick": "^3.1.0",
+    "lodash.zipobject": "^3.0.0",
     "swagger-parser": "^3.3.0"
   },
   "devDependencies": {

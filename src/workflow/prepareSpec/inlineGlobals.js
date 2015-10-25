@@ -1,20 +1,27 @@
 import mapValues from 'lodash.mapvalues';
 import omit from 'lodash.omit';
+import pick from 'lodash.pick';
+import zipObject from 'lodash.zipobject';
 
+import { OPERATION_KEYS, GLOBAL_KEYS } from '../../constants';
 
-const GLOBAL_KEYS = ['consumes', 'produces', 'schemes', 'security'];
 
 export default function inlineGlobals(spec) {
-  const paths = mapValues(spec.paths, (path) => {
-    return mapValues(path, (operation, operationKey) => {
-      if (operationKey === 'parameters') {
-        return operation;
-      }
-      GLOBAL_KEYS.forEach(key => {
-        operation[key] = operation[key] || spec[key] || [];
-      });
-      return operation;
+  const paths = mapValues(spec.paths, path => {
+    const operations = mapValues(pick(path, OPERATION_KEYS), operation => {
+      return {
+        ...operation,
+        ...zipObject(
+          GLOBAL_KEYS,
+          GLOBAL_KEYS.map(key => operation[key] || spec[key] || [])
+        ),
+      };
     });
+
+    return {
+      ...path,
+      ...operations,
+    };
   });
 
   return {

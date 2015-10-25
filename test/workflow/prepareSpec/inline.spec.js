@@ -2,7 +2,7 @@ import chai from 'chai';
 import forEach from 'lodash.foreach';
 
 
-describe('PrepareSwaggerSpec: inline', () => {
+describe('PrepareSwaggerSpec', () => {
   const tests = {
     inlineParameters: [
       'must inline every definition',
@@ -10,6 +10,7 @@ describe('PrepareSwaggerSpec: inline', () => {
       'must work when no global definition',
       'must work when no specific definition',
       'must create an empty definition array if no definition',
+      'must not remove others properties',
     ],
     inlineGlobals: [
       'must inline every definition',
@@ -17,6 +18,7 @@ describe('PrepareSwaggerSpec: inline', () => {
       'must work when no global definition',
       'must work when no specific definition',
       'must create an empty definition array if no definition',
+      'must not remove others properties',
     ],
   };
 
