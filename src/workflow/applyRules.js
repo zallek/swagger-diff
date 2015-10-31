@@ -10,7 +10,7 @@ import forEach from 'lodash.foreach';
  *   smooths: Array<Diff>,
  *   unmatchDiffs: Array<RawDiff>
  * }
- * with Diff: {ruleId: String, message: String}
+ * @note Diff: {ruleId: String, message: String}
  */
 export function applyRules(diffs, breakRules = {}, smoothRules = {}) {
   let breaks = [];

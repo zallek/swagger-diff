@@ -54,17 +54,17 @@ It's also possible to define different level of logs according to version change
 ```JSON
 {
   "changes": {
-    "break": {
+    "breaks": {
       "major": 2,
       "minor": 3,
       "patch": 3,
-      "nochange": 3
+      "unchanged": 3
     },
-    "smooth": {
+    "smooths": {
       "major": 0,
       "minor": 1,
       "patch": 2,
-      "nochange": 3
+      "unchanged": 3
     }
   }
 }
@@ -80,19 +80,16 @@ It's also possible to define different level of logs according to version change
 ```
 
 ### Configure specific rules
-YOu can also configure specific level of level for some rules.
+You can also configure specific level of level for some rules.
 ```JSON
 {
   "rules": {
-    "delete-path": {
-      "break": 2,
-      "smooth": 2
-    },
+    "delete-path": 0,
     "add-path": {
       "major": 2,
       "minor": 3,
       "patch": 3,
-      "nochange": 3
+      "unchanged": 3
     }
   }
 }

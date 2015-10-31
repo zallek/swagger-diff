@@ -18,14 +18,16 @@ const smoothRules = requireAll({
 });
 
 /**
- * @param  {Object} oldSpec
- * @param  {Object} newSpec
+ * @param  {SwaggerSpec Object} oldSpec
+ * @param  {SwaggerSpec Object} newSpec
+ * @param  {Object} config
  * @return {Promise}
  * Promise returns the following obejct
  * {
- *   breaks: Array<Diff>
- *   smooths: Array<Diff>,
- *   unmatchDiffs: Array<RawDiff>
+ *   errors: {Array>Diff>}
+ *   warnings: {Array>Diff>}
+ *   infos: {Array>Diff>}
+ *   unmatchDiffs: {Array<RawDiff>}
  * }
  */
 export default function swaggerDiff(oldSpec, newSpec, config) {
