@@ -5,7 +5,7 @@ export default function dereference(spec) {
   return SwaggerParser.dereference(spec, {
     $refs: {
       internal: true,
-      external: false, // Do not resolve external references
+      external: true,
       circular: false, // Disallow circular referenees
     },
   });

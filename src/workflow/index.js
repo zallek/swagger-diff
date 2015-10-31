@@ -2,9 +2,10 @@ import diff from 'diff';
 import requireAll from 'require-all';
 import semver from 'semver';
 
+import getConfig from './getConfig';
+import prepareSwaggerSpec from './prepareSwaggerSpec';
 import applyRules from './applyRules';
 import postProcessDiff from './postProcessDiff';
-import prepareSwaggerSpec from './prepareSwaggerSpec';
 import { BREAK_RULES_DIR, SMOOTH_RULES_DIR } from '../constants';
 
 
@@ -18,9 +19,9 @@ const smoothRules = requireAll({
 });
 
 /**
- * @param  {SwaggerSpec Object} oldSpec
- * @param  {SwaggerSpec Object} newSpec
- * @param  {Object} config
+ * @param  {string|object} oldSpec - The file path of the old Swagger spec; or a Swagger object.
+ * @param  {string|object} newSpec - The file path of the new Swagger spec; or a Swagger object.
+ * @param  {string|objec}  config - The file path of the config file or the config file
  * @return {Promise}
  * Promise returns the following obejct
  * {
@@ -31,6 +32,7 @@ const smoothRules = requireAll({
  * }
  */
 export default function swaggerDiff(oldSpec, newSpec, config) {
+  config = getConfig(config); // eslint-disable-line no-param-reassign
   Promise.all(
     prepareSwaggerSpec(oldSpec),
     prepareSwaggerSpec(newSpec)
