@@ -44,8 +44,8 @@ In the configuration file (default: .swagger-diff), you can customize the level 
 ```JSON
 {
   "changes": {
-    "break": 2,
-    "smooth": 2
+    "breaks": 2,
+    "smooths": 2
   }
 }
 ```
