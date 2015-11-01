@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 
 /**
  * Compute string to output on terminal
@@ -8,17 +9,30 @@
  * @return {String}
  */
 export default function({errors, warnings, infos, unmatchDiffs}) {
-  let output = '';
+  let output = 'swagger-diff\n';
+
+  const errorColor = errors.length > 0 ? chalk.red : chalk.white;
+  output += errorColor(`Errors (${errors.length})\n`);
   if (errors.length > 0) {
-    output += 'ERRORS\n' + errors.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
+    output += errors.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
   }
+
+  const warningColor = warnings.length > 0 ? chalk.yellow : chalk.white;
+  output += warningColor(`Warnings (${warnings.length})\n`);
   if (warnings.length > 0) {
-    output += 'WARNINGS\n' + warnings.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
+    output += warnings.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
   }
+
   if (infos.length > 0) {
-    output += 'INFOS\n' + infos.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
+    output += `Infos (${infos.length})\n`;
+    output += infos.map(diff => `${diff.message}\t\t${diff.ruleId}`).join('\n') + '\n';
   }
+
+  const unmatchedColor = unmatchDiffs.length > 0 ? chalk.yellow : chalk.white;
   if (unmatchDiffs.length > 0) {
-    output += 'UNMATCHED DIFFS\n' + unmatchDiffs.map(rawDiff => JSON.stringify(rawDiff)).join('\n');
+    output += unmatchedColor(`Unmatched diffs (${unmatchDiffs.length})\n`);
+    output += unmatchDiffs.map(rawDiff => JSON.stringify(rawDiff)).join('\n');
   }
+
+  return output;
 }

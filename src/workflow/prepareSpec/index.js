@@ -1,4 +1,3 @@
-import compose from '../../utils/compose';
 import dereference from './dereference';
 import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
@@ -9,11 +8,19 @@ import inlineParameters from './inlineParameters';
  * @return {Promise}
  */
 export default function prepareSpec(spec) {
+  const debug = require('debug')('swagger-diff:workflow:prepareSpec');
+
+  debug('start');
   return dereference(spec)
     .then(dereferencedSpec => {
-      return compose(
-        inlineGlobals,
-        inlineParameters
-      )(dereferencedSpec);
+      debug('dereferenced');
+
+      let specs = inlineGlobals(dereferencedSpec);
+      debug('globals inlined');
+
+      specs = inlineParameters(dereferencedSpec);
+      debug('parameters inlined');
+
+      return specs;
     });
 }

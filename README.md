@@ -112,7 +112,7 @@ Swagger spec 2.0 allows to specify global definitions for `parameters`, `securit
 This step, inline these definitions in every paths objects.
 
 ### Compute Raw diff
-[diff](https://github.com/flitbit/diff) lib is used to compute deep raw diff.
+[deep-diff](https://www.npmjs.com/package/deep-diff) lib is used to compute deep raw diff.
 
 ### Exectute Rules
 Exectute each rule on each raw diff.

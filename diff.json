@@ -1,0 +1,4 @@
+swagger-diff
+Errors (1)
+/pet: operationId turned from addPet to addPet5		edit-operation-id
+Warnings (0)

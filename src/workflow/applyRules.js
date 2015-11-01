@@ -12,7 +12,7 @@ import forEach from 'lodash.foreach';
  * }
  * @note Diff: {ruleId: String, message: String}
  */
-export function applyRules(diffs, breakRules = {}, smoothRules = {}) {
+export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
   let breaks = [];
   let smooths = [];
   let unmatchDiffs = [];

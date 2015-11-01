@@ -1,22 +1,16 @@
-import diff from 'diff';
+import deepDiff from 'deep-diff';
 import requireAll from 'require-all';
 import semver from 'semver';
 
 import getConfig from './getConfig';
-import prepareSwaggerSpec from './prepareSwaggerSpec';
+import prepareSpec from './prepareSpec';
 import applyRules from './applyRules';
 import postProcessDiff from './postProcessDiff';
 import { BREAK_RULES_DIR, SMOOTH_RULES_DIR } from '../constants';
 
 
-const breakRules = requireAll({
-  dirname: BREAK_RULES_DIR,
-  filter: /\.js$/,
-});
-const smoothRules = requireAll({
-  dirname: SMOOTH_RULES_DIR,
-  filter: /\.js$/,
-});
+const breakRules = requireAll(BREAK_RULES_DIR);
+const smoothRules = requireAll(SMOOTH_RULES_DIR);
 
 /**
  * @param  {string|object} oldSpec - The file path of the old Swagger spec; or a Swagger object.
@@ -32,18 +26,37 @@ const smoothRules = requireAll({
  * }
  */
 export default function swaggerDiff(oldSpec, newSpec, config) {
-  config = getConfig(config); // eslint-disable-line no-param-reassign
-  Promise.all(
-    prepareSwaggerSpec(oldSpec),
-    prepareSwaggerSpec(newSpec)
-  )
-  .then(([preparedOldSpec, preparedNewSpec]) => {
-    const versionDiff = semver.diff(preparedOldSpec.infos.version, preparedNewSpec.infos.version);
-    preparedOldSpec.infos.version = null;
-    preparedNewSpec.infos.version = null;
+  const debug = require('debug')('swagger-diff:workflow');
+  debug('start');
 
-    const rawDiffs = diff(preparedOldSpec, preparedNewSpec);
-    const diffs = applyRules(rawDiffs, breakRules, smoothRules);
-    return postProcessDiff(diffs, versionDiff, config);
+  config = getConfig(config); // eslint-disable-line no-param-reassign
+  return Promise.all([
+    prepareSpec(oldSpec),
+    prepareSpec(newSpec),
+  ])
+  .then(([prepOldSpec, prepNewSpec]) => {
+    debug('specs perpared');
+
+    let versionDiff;
+    if (prepOldSpec.info && prepOldSpec.info.version && prepNewSpec.info && prepNewSpec.info.version) {
+      versionDiff = semver.diff(prepOldSpec.info.version, prepNewSpec.info.version);
+      if (versionDiff === null) {
+        versionDiff = 'unchanged';
+      }
+      prepOldSpec.info.version = null;
+      prepNewSpec.info.version = null;
+    }
+    debug('versionDiff', versionDiff);
+
+    const rawDiffs = deepDiff(prepOldSpec, prepNewSpec);
+    debug('rawDiffs', rawDiffs);
+
+    const changes = applyRules(rawDiffs, breakRules, smoothRules);
+    debug('changes', changes);
+
+    const diffs = postProcessDiff(changes, versionDiff, config);
+    debug('diffs', diffs);
+
+    return diffs;
   });
 }

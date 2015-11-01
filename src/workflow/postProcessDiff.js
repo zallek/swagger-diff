@@ -13,7 +13,7 @@ const LOG_LEVELS = {
  * @param  {Array<Diff>} diff.breaks
  * @param  {Array<Diff>} diff.smooths
  * @param  {Array<RaxDiff>} diff.unmatchDiffs
- * @param  {String} versionDiff
+ * @param  {String} versionDiff, if null -> unchanged, if undefined, no version defined
  * @param  {Object} config.changes
  * @param  {Object} config.rules
  * @return
@@ -25,7 +25,7 @@ const LOG_LEVELS = {
  * }
  * @note Diff: {ruleId: String, message: String}
  */
-export default function postProcessDiff({breaks, smooths, unmatchDiffs}, versionDiff = 'unchanged', config) {
+export default function postProcessDiff({breaks, smooths, unmatchDiffs}, versionDiff, config) {
   const diff = {
     errors: [],
     warnings: [],
@@ -38,12 +38,13 @@ export default function postProcessDiff({breaks, smooths, unmatchDiffs}, version
     { changes: smooths, type: 'smooths' },
   ],
   ({changes, type}) => forEach(changes, change => {
-    const ruleConfig = config.rules[change.ruleId];
+    const ruleConfig = config.rules && config.rules[change.ruleId];
     const globalConfig = config.changes[type];
 
     const level = isNumber(ruleConfig) ? ruleConfig
-                : isPlainObject(ruleConfig) ? ruleConfig[versionDiff]
-                : globalConfig[versionDiff];
+                : versionDiff && isPlainObject(ruleConfig) ? ruleConfig[versionDiff]
+                : versionDiff && isPlainObject(globalConfig) ? globalConfig[versionDiff]
+                : globalConfig;
 
     if (LOG_LEVELS[level]) {
       diff[LOG_LEVELS[level]].push(change);

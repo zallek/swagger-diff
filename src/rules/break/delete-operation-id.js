@@ -1,7 +1,7 @@
 
 
 export default function editOperationId({kind, path, lhs, rhs}) {
-  if (kind !== 'D' || path[0] !== 'path' || path[2] !== 'operationId') {
+  if (kind !== 'D' || path[0] !== 'paths' || path[3] !== 'operationId') {
     return false;
   }
   const pathId = path[1];

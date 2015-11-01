@@ -1,6 +1,8 @@
+import fs from 'fs';
 import { readFileSync } from 'jsonfile';
 import defaultsDeep from 'lodash.defaultsdeep';
-import defaultConfig from '../defaultConfig.json';
+import isPlainObject from 'lodash.isplainobject';
+import defaultConfig from '../defaultConfig';
 
 
 /**
@@ -8,7 +10,22 @@ import defaultConfig from '../defaultConfig.json';
  * @return {Object}
  */
 export default function getConfig(config) {
-  const baseConfig = typeof config === 'string' ? readFileSync(config) : config;
+  let baseConfig = {};
+  if (typeof config === 'string') {
+    baseConfig = parseConfigFile(config);
+  }
+  if (isPlainObject(config)) {
+    baseConfig = config;
+  }
 
   return defaultsDeep(baseConfig, defaultConfig);
+}
+
+function parseConfigFile(fileName) {
+  try {
+    fs.lstatSync(fileName);
+  } catch (e) {
+    return {};
+  }
+  return readFileSync(fileName);
 }
