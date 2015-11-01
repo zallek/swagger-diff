@@ -15,7 +15,7 @@ The binary allows you to use swagger-diff in CLI.
 ```bash
 $ swagger-diff <old> <new>
 ```
-It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error".
+It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error". It can also write the diff result in a file. Use `-h` for option defails.
 
 ## Diffs
 Swagger-Diff defines rules that performs ONE type of diff checking. These rules are separated in 2 groups:
