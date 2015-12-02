@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/ (get): add required param username added",
+      "ruleId": "add-param-required"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
