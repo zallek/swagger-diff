@@ -1,4 +1,5 @@
 import dereference from './dereference';
+import indexParameters from './indexParameters';
 import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
 import path from 'path';
@@ -18,12 +19,16 @@ export default function prepareSpec(spec) {
   return dereference(spec)
     .then(dereferencedSpec => {
       debug('dereferenced');
+      let specs = dereferencedSpec;
 
-      let specs = inlineGlobals(dereferencedSpec);
+      specs = inlineGlobals(specs);
       debug('globals inlined');
 
-      specs = inlineParameters(dereferencedSpec);
+      specs = inlineParameters(specs);
       debug('parameters inlined');
+
+      specs = indexParameters(specs);
+      debug('parameters indexed');
 
       return specs;
     });

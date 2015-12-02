@@ -2,8 +2,16 @@ import chai from 'chai';
 import forEach from 'lodash.foreach';
 
 
-describe('PrepareSwaggerSpec', () => {
+describe('PrepareSpec', () => {
   const tests = {
+    inlineGlobals: [
+      'must inline every definition',
+      'must not modify specific definition',
+      'must work when no global definition',
+      'must work when no specific definition',
+      'must create an empty definition array if no definition',
+      'must not remove others properties',
+    ],
     inlineParameters: [
       'must inline every definition',
       'must merge definitions',
@@ -12,13 +20,9 @@ describe('PrepareSwaggerSpec', () => {
       'must create an empty definition array if no definition',
       'must not remove others properties',
     ],
-    inlineGlobals: [
-      'must inline every definition',
-      'must not modify specific definition',
-      'must work when no global definition',
-      'must work when no specific definition',
-      'must create an empty definition array if no definition',
-      'must not remove others properties',
+    indexParameters: [
+      'must index every definition',
+      'must work when no definition',
     ],
   };
 
