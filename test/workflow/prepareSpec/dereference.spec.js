@@ -3,9 +3,9 @@ import chai from 'chai';
 import dereference from '../../../src/workflow/prepareSpec/dereference';
 
 
-describe('PrepareSwaggerSpec: dereference', () => {
+describe('Dereference Spec', () => {
   const tests = [
-    'must deference every definition',
+    'must dereference every definition',
   ];
 
   tests.forEach((test, i) => {
@@ -23,7 +23,7 @@ describe('PrepareSwaggerSpec: dereference', () => {
     });
   });
 
-  it('must not deference circular definitions', (done) => {
+  it('must not dereference circular definitions', (done) => {
     const input = require(`./dereference/circular-input`);
     dereference(input)
       .catch(err => {

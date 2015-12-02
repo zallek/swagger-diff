@@ -2,7 +2,7 @@ import chai from 'chai';
 import forEach from 'lodash.foreach';
 
 
-describe('PrepareSpec', () => {
+describe('Prepare Spec', () => {
   const tests = {
     inlineGlobals: [
       'must inline every definition',
