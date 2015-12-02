@@ -15,6 +15,7 @@
         }
       ],
       "get": {
+        "operationId": "getUser!"
       }
     }
   }

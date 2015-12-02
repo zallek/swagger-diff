@@ -1,8 +1,8 @@
 {
   "breaks": [
     {
-      "message": "/users/{username}/: operationId turned from getUser! to getUser",
-      "ruleId": "edit-operation-id"
+      "message": "/users/{username}/: operationId was deleted (previous: getUser)",
+      "ruleId": "delete-operation-id"
     }
   ],
   "smooths": [],
