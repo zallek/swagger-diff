@@ -6,7 +6,7 @@ import defaultConfig from '../defaultConfig';
 
 
 /**
- * @param  {string|objec}  config - The file path of the config file or the config file
+ * @param  {string|object}  config - The file path of the config file or the config file
  * @return {Object}
  */
 export default function getConfig(config) {

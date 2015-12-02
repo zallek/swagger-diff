@@ -2,12 +2,12 @@
 'use strict';
 
 var fs = require('fs');
-var program  = require('commander');
-var chalk    = require('chalk');
+var program = require('commander');
+var chalk = require('chalk');
 var jsonfile = require('jsonfile');
 var reporter = require('../lib/reporter');
-var api      = require('../lib');
-var config   = require('../lib/constants');
+var swaggerDiff = require('../lib');
+var config = require('../lib/constants');
 
 
 program
@@ -15,7 +15,7 @@ program
   .description('Compute diff bewteen two Swagger 2.0 specs')
   .option('-o, --outfile <filename>', 'The output file, otherwise diff is printed on stdout')
   .option('-f, --outformat <format>', 'The output format, either json or raw, default is json')
-  .option('-c, --config <filename>', 'The config file, default is ' + config.DEFAULT_CONFIG_PATH)
+  .option('-c, --config <filename>', 'The config file')
   .option('--no-color', 'Disable color in output')
   .action(function(oldSpec, newSpec, options) {
     if (!oldSpec) {
@@ -24,7 +24,7 @@ program
     if (!newSpec) {
       errorHandler(new Error('newSpec file path is missing'));
     }
-    api.swaggerDiff(oldSpec, newSpec, options.config || config.DEFAULT_CONFIG_PATH)
+    swaggerDiff(oldSpec, newSpec, options.config)
       .then(function(diff) {
         if (options.outfile) {
           if (options.outformat === 'raw') {
