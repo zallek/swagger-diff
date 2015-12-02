@@ -1,7 +1,7 @@
 {
   "breaks": [
     {
-      "message": "/users/{username}/: operationId turned from getUser! to getUser",
+      "message": "/users/{username}/ (get) - OperationId turned from getUser! to getUser",
       "ruleId": "edit-operation-id"
     }
   ],

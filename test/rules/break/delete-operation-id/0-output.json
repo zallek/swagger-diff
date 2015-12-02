@@ -1,7 +1,7 @@
 {
   "breaks": [
     {
-      "message": "/users/{username}/: operationId was deleted (previous: getUser)",
+      "message": "/users/{username}/ (get) - OperationId (getUser) deleted",
       "ruleId": "delete-operation-id"
     }
   ],

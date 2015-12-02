@@ -1,7 +1,7 @@
 {
   "breaks": [
     {
-      "message": "/users/{username}/: was deleted",
+      "message": "/users/{username}/ - Deleted",
       "ruleId": "delete-path"
     }
   ],

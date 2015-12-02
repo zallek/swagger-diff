@@ -2,7 +2,7 @@
   "breaks": [],
   "smooths": [
     {
-      "message": "/users/{username}/: was added",
+      "message": "/users/{username}/ - Added",
       "ruleId": "add-path"
     }
   ],

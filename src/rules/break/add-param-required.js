@@ -4,7 +4,7 @@ export default function addParamRequired({kind, path, lhs, rhs}) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}): add required param ${paramName} added`;
+    return `${pathId} (${method}) - Required param ${paramName} added`;
   }
   return false;
 }
