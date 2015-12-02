@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/: was deleted",
+      "ruleId": "delete-path"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
