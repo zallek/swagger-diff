@@ -15,7 +15,7 @@ const smoothRules = requireAll(SMOOTH_RULES_DIR);
 /**
  * @param  {string|object} oldSpec - The file path of the old Swagger spec; or a Swagger object.
  * @param  {string|object} newSpec - The file path of the new Swagger spec; or a Swagger object.
- * @param  {string|objec}  config - The file path of the config file or the config file
+ * @param  {string|object} config  - The file path of the config file or the config file
  * @return {Promise}
  * Promise returns the following obejct
  * {
@@ -54,7 +54,7 @@ export default function swaggerDiff(oldSpec, newSpec, config) {
     const changes = applyRules(rawDiffs, breakRules, smoothRules);
     debug('changes', changes);
 
-    const diffs = postProcessDiff(changes, versionDiff, config);
+    const diffs = config.skipDiffPostProcessing ? changes : postProcessDiff(changes, versionDiff, config);
     debug('diffs', diffs);
 
     return diffs;
