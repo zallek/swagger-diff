@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "Host turned from www.example.com to www.example1.com",
+      "ruleId": "edit-host"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
