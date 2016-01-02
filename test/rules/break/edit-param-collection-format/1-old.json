@@ -9,7 +9,7 @@
       "get": {
         "parameters": [
           {
-            "type": "string",
+            "type": "array",
             "name": "username",
             "in": "query"
           }

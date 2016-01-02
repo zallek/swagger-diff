@@ -10,7 +10,7 @@
         "parameters": [
           {
             "collectionFormat": "tsv",
-            "type": "string",
+            "type": "array",
             "name": "username",
             "in": "query"
           }

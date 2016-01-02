@@ -10,7 +10,7 @@
         "parameters": [
           {
             "collectionFormat": "csv",
-            "type": "string",
+            "type": "array",
             "name": "username",
             "in": "query"
           }
