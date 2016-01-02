@@ -1,6 +1,7 @@
 
 export default function editArrayItemsType({kind, path, lhs, rhs}) {
   const match = kind === 'E'
+              && path.length >= 2
               && path[path.length - 2] === 'items'
               && path[path.length - 1] === 'type';
   if (match) {

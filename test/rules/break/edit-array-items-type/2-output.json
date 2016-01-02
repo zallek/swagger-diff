@@ -1,7 +1,7 @@
 {
   "breaks": [
     {
-      "message": "paths /users/{username}/ get parameters CsvExportStatus schema query properties fields - Array items type turn from string to boolean",
+      "message": "definitions UrlsQuery properties fields - Array items type turn from string to boolean",
       "ruleId": "edit-array-items-type"
     }
   ],

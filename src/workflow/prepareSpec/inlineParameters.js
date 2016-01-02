@@ -2,14 +2,14 @@ import mapValues from 'lodash.mapvalues';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 
-import { OPERATION_KEYS, PARAMETERS_KEY } from '../../constants';
+import { PATHS_KEY, OPERATION_KEYS, PARAMETERS_KEY } from '../../constants';
 
 
 export default function inlineParameters(spec) {
-  if (!spec.paths) {
+  if (!spec[PATHS_KEY]) {
     return spec;
   }
-  const paths = mapValues(spec.paths, path => {
+  const paths = mapValues(spec[PATHS_KEY], path => {
     const globalParameters = path[PARAMETERS_KEY] || [];
     const operations = mapValues(pick(path, OPERATION_KEYS), operation => {
       return {
@@ -26,6 +26,6 @@ export default function inlineParameters(spec) {
 
   return {
     ...spec,
-    paths,
+    [PATHS_KEY]: paths,
   };
 }

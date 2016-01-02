@@ -1,0 +1,33 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/": {
+      "get": {
+        "parameters": [
+          {
+            "type": "object",
+            "name": "param",
+            "properties": {
+              "foo": {
+                "type": "integer",
+                "required": true
+              },
+              "bar": {
+                "type": "string",
+                "required": true
+              },
+              "koo": {
+                "type": "boolean"
+              }
+            },
+            "in": "body"
+          }
+        ]
+      }
+    }
+  }
+}

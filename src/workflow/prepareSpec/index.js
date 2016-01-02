@@ -2,6 +2,7 @@ import dereference from './dereference';
 import indexParameters from './indexParameters';
 import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
+import inlineRequiredProperties from './inlineRequiredProperties';
 import path from 'path';
 
 
@@ -16,6 +17,7 @@ export default function prepareSpec(spec) {
   if (typeof spec === 'string' && !path.isAbsolute(spec)) {
     spec = path.resolve(process.cwd(), spec); // eslint-disable-line no-param-reassign
   }
+
   return dereference(spec)
     .then(dereferencedSpec => {
       debug('dereferenced');
@@ -29,6 +31,9 @@ export default function prepareSpec(spec) {
 
       specs = indexParameters(specs);
       debug('parameters indexed');
+
+      specs = inlineRequiredProperties(specs);
+      debug('required properties inlined');
 
       return specs;
     });

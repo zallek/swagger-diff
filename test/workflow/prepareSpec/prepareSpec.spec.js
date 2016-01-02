@@ -24,6 +24,11 @@ describe('Prepare Spec', () => {
       'must index every definition',
       'must work when no definition',
     ],
+    inlineRequiredProperties: [
+      'must inline params properties',
+      'must inline definitions properties',
+      'must inline definitions properties deeply',
+    ],
   };
 
   forEach(tests, (moduleTests, moduleName) => {

@@ -28,12 +28,12 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
           ruleId,
           message: ruleResult,
         });
-        return false;
+        return false; // break
       }
     });
 
     if (matchRule) {
-      return false;
+      return true; // continue
     }
 
     forEach(smoothRules, (rule, ruleId) => {
@@ -44,12 +44,12 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
           ruleId,
           message: ruleResult,
         });
-        return false;
+        return false; // break
       }
     });
 
     if (matchRule) {
-      return false;
+      return true; // continue
     }
 
     unmatchDiffs = unmatchDiffs.concat(diff);

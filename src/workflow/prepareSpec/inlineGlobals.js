@@ -3,11 +3,11 @@ import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import zipObject from 'lodash.zipobject';
 
-import { OPERATION_KEYS, GLOBAL_KEYS } from '../../constants';
+import { PATHS_KEY, OPERATION_KEYS, GLOBAL_KEYS } from '../../constants';
 
 
 export default function inlineGlobals(spec) {
-  const paths = mapValues(spec.paths, path => {
+  const paths = mapValues(spec[PATHS_KEY], path => {
     const operations = mapValues(pick(path, OPERATION_KEYS), operation => {
       return {
         ...operation,
@@ -26,6 +26,6 @@ export default function inlineGlobals(spec) {
 
   return {
     ...omit(spec, GLOBAL_KEYS),
-    paths,
+    [PATHS_KEY]: paths,
   };
 }
