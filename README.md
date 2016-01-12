@@ -108,7 +108,8 @@ You can also configure specific level of level for some rules.
 
 To compute the diff, it exectutes a workflow composed of 3 main steps.
 
-[How it works]([Imgur](http://i.imgur.com/UaLGnwt.png?1)) [Source](https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing)
+![How it works](https://cloud.githubusercontent.com/assets/1886834/12275565/eefdb894-b970-11e5-8caa-43624864c4bd.png)
+ [Source](https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing)
 
 ### Preparation
 
@@ -129,6 +130,7 @@ Exectute each rule on each raw diff to output breakings and smooth changes.
 
 ### Final diff
 Post process diffs to output errors, warnings, infos according to configuration and version change.
+
 **Note:** unmatchDiffs are the raw diffs that didn't much any rules. They can include breakings changes not implemented yet.
 
 [travis-url]: https://travis-ci.org/zallek/swagger-diff
