@@ -4,6 +4,11 @@
 
 This package provides utils and CLI to compute the diff between two swagger API specifications. Output diff can be configured according to version change.
 
+## Purpose
+- Identify breaking and smooth changes.
+- Ensure API versioning consistency.
+- Compute API changelogs.
+- Prevent unexpected API changes.
 
 ## Compatilibity
 
@@ -15,7 +20,11 @@ The binary allows you to use swagger-diff in CLI.
 ```bash
 $ swagger-diff <old> <new>
 ```
-It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error". It can also write the diff result in a file. Use `-h` for option defails.
+It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error". It can also write the diff result in a JSON file. Use `-h` for option defails.
+
+Example of CLI output
+![CLI output example](https://cloud.githubusercontent.com/assets/1886834/12273943/c748b518-b968-11e5-90ac-05102e184c35.png)
+
 
 ## Diffs
 Swagger-Diff defines rules that performs ONE type of diff checking. These rules are separated in 2 groups:
