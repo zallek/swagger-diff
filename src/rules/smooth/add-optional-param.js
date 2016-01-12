@@ -1,5 +1,5 @@
 
-export default function addParamOptional({kind, path, lhs, rhs}) {
+export default function addOptionalParam({kind, path, lhs, rhs}) {
   const match = kind === 'N'
               && path.length === 5
               && path[0] === 'paths'

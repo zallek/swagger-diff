@@ -3,7 +3,7 @@
   "smooths": [
     {
       "message": "/users/{username}/ (get) - Optional param username added",
-      "ruleId": "add-param-optional"
+      "ruleId": "add-optional-param"
     }
   ],
   "unmatchDiffs": []
