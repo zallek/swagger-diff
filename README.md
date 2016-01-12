@@ -108,24 +108,28 @@ You can also configure specific level of level for some rules.
 
 To compute the diff, it exectutes a workflow composed of 3 main steps.
 
+[How it works]([Imgur](http://i.imgur.com/UaLGnwt.png?1)) [Source](https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing)
+
 ### Preparation
 
 #### Dereference
-
 Resolve JSON references and dereference URIs.
 
 #### Inline global definitions
+Swagger spec 2.0 allows to specify global definitions for `parameters`, `security`, `schemes`, `consumes` and `produces` that can then be overriden when needed. It inlines these definitions in every paths objects.
 
-Swagger spec 2.0 allows to specify global definitions for `parameters`, `security`, `schemes`, `consumes` and `produces` that can then be overriden when needed.
+#### Index definitions
+`parameters` are indexed by their `name` in order to allow raw-diff to compare parameters nicely.
 
-This step, inline these definitions in every paths objects.
-
-### Compute Raw diff
+### Raw diff
 [deep-diff](https://www.npmjs.com/package/deep-diff) lib is used to compute deep raw diff.
 
-### Exectute Rules
-Exectute each rule on each raw diff.
+### Rules application
+Exectute each rule on each raw diff to output breakings and smooth changes.
 
+### Final diff
+Post process diffs to output errors, warnings, infos according to configuration and version change.
+**Note:** unmatchDiffs are the raw diffs that didn't much any rules. They can include breakings changes not implemented yet.
 
 [travis-url]: https://travis-ci.org/zallek/swagger-diff
 [travis-image]: https://travis-ci.org/zallek/swagger-diff.svg
