@@ -1,9 +1,15 @@
 {
   "name": "swagger-diff",
   "version": "0.0.0",
-  "description": "Swagger Diff Utils",
+  "description": "Swagger Diff",
   "author": "Nicolas Fortin <nicolas.fortin37@gmail.com>",
-  "main": "lib/index.js",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "src"
+  ],
   "scripts": {
     "clean": "rimraf lib dist",
     "lint": "eslint .",
@@ -13,11 +19,24 @@
     "build": "npm run clean && babel src --out-dir lib && cpy src/**/*.json lib",
     "preversion": "npm run clean && npm run check",
     "version": "npm run build",
-    "postversion": "git push && git push --tags && npm run clean"
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run build",
+    "postpublish": "npm run clean"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/zallek/swagger-diff.git"
+  },
+  "homepage": "https://github.com/zallek/swagger-diff",
+  "bugs": "https://github.com/zallek/swagger-diff/issues",
+  "keywords": [
+    "swagger",
+    "diff",
+    "deep-diff",
+    "versioning"
+  ],
+  "engines": {
+    "node": ">=0.10"
   },
   "dependencies": {
     "babel-polyfill": "^6.0.14",

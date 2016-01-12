@@ -6,3 +6,4 @@ before_install:
 install:
 script:
   - npm run check
+  - npm run build

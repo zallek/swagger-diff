@@ -1,5 +1,6 @@
 # swagger-diff
 
+[![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
 This package provides utils and CLI to compute the diff between two swagger API specifications. Output diff can be configured according to version change.
@@ -108,8 +109,7 @@ You can also configure specific level of level for some rules.
 
 To compute the diff, it exectutes a workflow composed of 3 main steps.
 
-![How it works](https://cloud.githubusercontent.com/assets/1886834/12275565/eefdb894-b970-11e5-8caa-43624864c4bd.png)
- [Source](https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing)
+[![How it works][schema-image]][schema-url]
 
 ### Preparation
 
@@ -133,5 +133,10 @@ Post process diffs to output errors, warnings, infos according to configuration 
 
 **Note:** unmatchDiffs are the raw diffs that didn't much any rules. They can include breakings changes not implemented yet.
 
+
+[npm-url]: https://www.npmjs.com/package/swagger-diff
+[npm-image]: https://img.shields.io/npm/v/swagger-diff.svg?style=flat
 [travis-url]: https://travis-ci.org/zallek/swagger-diff
 [travis-image]: https://travis-ci.org/zallek/swagger-diff.svg
+[schema-url]: https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing
+[schema-image]: https://cloud.githubusercontent.com/assets/1886834/12275565/eefdb894-b970-11e5-8caa-43624864c4bd.png
