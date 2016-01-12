@@ -28,6 +28,7 @@
     "jsonfile": "^2.2.3",
     "lodash.defaultsdeep": "^3.10.0",
     "lodash.foreach": "^3.0.3",
+    "lodash.get": "^3.7.0",
     "lodash.isnumber": "^3.0.1",
     "lodash.isobject": "^3.0.2",
     "lodash.isplainobject": "^3.2.0",
