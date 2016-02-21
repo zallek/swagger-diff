@@ -10,9 +10,11 @@ import defaultConfig from '../defaultConfig.json';
  * @return {Object}
  */
 export default function getConfig(config) {
-  let baseConfig = {};
+  let baseConfig;
 
-  if (isPlainObject(config)) {
+  if (!config) {
+    baseConfig = {};
+  } else if (isPlainObject(config)) {
     baseConfig = config;
   } else if (!process.browser && typeof config === 'string') {
     baseConfig = readConfigFile(config);
