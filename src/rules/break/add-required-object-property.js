@@ -1,5 +1,5 @@
 
-export default function addRequiredObjectProperty({kind, path, lhs, rhs}) {
+export default function addRequiredObjectProperty({ kind, path, lhs, rhs }) {
   const match = kind === 'N'
               && path.length >= 3
               && path[path.length - 2] === 'properties'

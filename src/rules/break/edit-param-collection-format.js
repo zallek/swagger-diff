@@ -1,5 +1,6 @@
+/* eslint max-len: 0 */
 
-export default function editParamCollectionFormat({kind, path, lhs, rhs}) {
+export default function editParamCollectionFormat({ kind, path, lhs, rhs }) {
   const match = (kind === 'N' || kind === 'E')
               && path.length === 6
               && path[0] === 'paths'

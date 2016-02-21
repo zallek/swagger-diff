@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 
+/* eslint no-var:0, no-console:0, prefer-arrow-callback:0, func-names:0 */
+
 var fs = require('fs');
 var program = require('commander');
 var chalk = require('chalk');
 var jsonfile = require('jsonfile');
 var reporter = require('../lib/reporter');
 var swaggerDiff = require('../lib');
-var config = require('../lib/constants');
 
 
 program
@@ -17,7 +18,7 @@ program
   .option('-f, --outformat <format>', 'The output format, either json or raw, default is json')
   .option('-c, --config <filename>', 'The config file')
   .option('--no-color', 'Disable color in output')
-  .action(function(oldSpec, newSpec, options) {
+  .action(function (oldSpec, newSpec, options) {
     if (!oldSpec) {
       errorHandler(new Error('oldSpec file path or URL is missing'));
     }
@@ -25,11 +26,11 @@ program
       errorHandler(new Error('newSpec file path or URL is missing'));
     }
     swaggerDiff(oldSpec, newSpec, options.config)
-      .then(function(diff) {
+      .then(function (diff) {
         if (options.outfile) {
           if (options.outformat === 'raw') {
-            fs.writeFile(options.outfile, reporter(diff), function(err) {
-              if(err) {
+            fs.writeFile(options.outfile, reporter(diff), function (err) {
+              if (err) {
                 console.log('Something went wrong when writting output in %s', options.outfile);
                 errorHandler(err);
               }
@@ -37,8 +38,8 @@ program
               endHandler(diff);
             });
           } else {
-            jsonfile.writeFile(options.outfile, diff, function(err) {
-              if (err) {
+            jsonfile.writeFile(options.outfile, diff, function (err) {
+              if (err) {
                 console.log('Something went wrong when writting output in %s', options.outfile);
                 errorHandler(err);
               }
@@ -46,8 +47,7 @@ program
               endHandler(diff);
             });
           }
-        }
-        else {
+        } else {
           console.log(reporter(diff));
           endHandler(diff);
         }
@@ -57,9 +57,9 @@ program
 
 program
   .version(require('../package').version)
-  .option('-d, --debug [filter]', 'Show debug output, optionally filtered (e.g. "*", "swagger-diff:*", etc.)')
-  .on('debug', function(filter) {
-    process.env.DEBUG = filter || '*';
+  .option('-d, --debug [filter]', 'Show debug output, by default only swagger-diff debug')
+  .on('debug', function (filter) {
+    process.env.DEBUG = filter || 'swagger-diff:*';
   })
   .parse(process.argv);
 

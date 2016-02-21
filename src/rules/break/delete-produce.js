@@ -1,5 +1,5 @@
 
-export default function deleteProduce({kind, path, index, item}) {
+export default function deleteProduce({ kind, path, index, item }) {
   const match = kind === 'A'
               && path.length === 4
               && path[0] === 'paths'

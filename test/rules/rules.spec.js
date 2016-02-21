@@ -21,7 +21,7 @@ const RULES_TYPES = [
   },
 ];
 
-RULES_TYPES.forEach(({label, rules, testFolder}) => {
+RULES_TYPES.forEach(({ label, rules, testFolder }) => {
   describe(label, () => {
     forEach(rules, (rule, ruleId) => {
       describe(ruleId, () => {
@@ -35,10 +35,10 @@ RULES_TYPES.forEach(({label, rules, testFolder}) => {
           filter: /(\d+)-output\.json$/,
         });
         forEach(outputs, (output, testId) => {
-          it('Test ' + testId, (done) => {
+          it(`Test ${testId}`, (done) => {
             const oldSpec = require(`./${testFolder}/${ruleId}/${testId}-old`);
             const newSpec = require(`./${testFolder}/${ruleId}/${testId}-new`);
-            swaggerDiff(oldSpec, newSpec, {skipDiffPostProcessing: true})
+            swaggerDiff(oldSpec, newSpec, { skipDiffPostProcessing: true })
               .then(diff => {
                 chai.expect(diff).to.deep.equal(output);
                 done();

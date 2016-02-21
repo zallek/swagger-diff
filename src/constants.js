@@ -1,6 +1,8 @@
+import path from 'path';
 
-export const BREAK_RULES_DIR = __dirname + '/rules/break';
-export const SMOOTH_RULES_DIR = __dirname + '/rules/smooth';
+
+export const BREAK_RULES_DIR = path.join(__dirname, '/rules/break');
+export const SMOOTH_RULES_DIR = path.join(__dirname, '/rules/smooth');
 
 export const GLOBAL_KEYS = ['consumes', 'produces', 'schemes', 'security'];
 

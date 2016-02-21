@@ -1,5 +1,5 @@
 
-export default function editObjectPropertyType({kind, path, lhs, rhs}) {
+export default function editObjectPropertyType({ kind, path, lhs, rhs }) {
   const match = kind === 'E'
               && path.length >= 3
               && path[path.length - 3] === 'properties'

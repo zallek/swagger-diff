@@ -1,5 +1,5 @@
 
-export default function deleteObjectProperty({kind, path, lhs, rhs}) {
+export default function deleteObjectProperty({ kind, path, lhs, rhs }) {
   const match = kind === 'D'
               && path.length >= 3
               && path[path.length - 2] === 'properties';

@@ -1,3 +1,5 @@
+/* eslint no-param-reassign:0 */
+
 import mapValues from 'lodash.mapvalues';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';

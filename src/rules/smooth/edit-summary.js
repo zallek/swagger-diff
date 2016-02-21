@@ -1,5 +1,5 @@
 
-export default function editSummary({kind, path, lhs, rhs}) {
+export default function editSummary({ kind, path, lhs, rhs }) {
   const match = kind === 'E'
               && path.length === 4
               && path[0] === 'paths'

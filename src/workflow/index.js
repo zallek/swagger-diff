@@ -1,3 +1,5 @@
+/* eslint no-param-reassign:0 */
+
 import deepDiff from 'deep-diff';
 import requireAll from 'require-all';
 import semver from 'semver';
@@ -29,7 +31,7 @@ export default function swaggerDiff(oldSpec, newSpec, config) {
   const debug = require('debug')('swagger-diff:workflow');
   debug('start');
 
-  config = getConfig(config); // eslint-disable-line no-param-reassign
+  config = getConfig(config);
   return Promise.all([
     prepareSpec(oldSpec),
     prepareSpec(newSpec),
@@ -61,7 +63,8 @@ export default function swaggerDiff(oldSpec, newSpec, config) {
     const changes = applyRules(rawDiffs, breakRules, smoothRules);
     debug('changes', changes);
 
-    const diffs = config.skipDiffPostProcessing ? changes : postProcessDiff(changes, versionDiff, config);
+    const diffs = config.skipDiffPostProcessing ? changes
+                : postProcessDiff(changes, versionDiff, config);
     debug('diffs', diffs);
 
     return diffs;

@@ -1,14 +1,16 @@
 {
   "extends": "airbnb/base",
+  "parser": "babel-eslint",
   "env": {
     "node": true
   },
   "rules": {
-    "id-length": 0,           //OK: There is no point to disallow declaring variable as short as `x` or `y`.
-    "no-nested-ternary": 0,   //OK: Nested ternary are fine for conditionnal adffectation if indented properly.
+    "arrow-body-style": 0,    // Borring rule
+    "id-length": 0,           // OK: There is no point to disallow declaring variable as short as `x` or `y`.
+    "no-nested-ternary": 0,   // OK: Nested ternary are fine for conditionnal adffectation if indented properly.
 
-    "no-unused-vars": [2, {"args": "none"}], //Allow unused argument definition in order to keep functions signatures self documented.
+    "no-unused-vars": [2, {"args": "none"}], // Allow unused argument definition in order to keep functions signatures self documented.
     "no-use-before-define": [2, "nofunc"],
-    "quote-props": [2, "as-needed"],         //Disallow to quote properties (of object) when it's not requiered.
+    "quote-props": [2, "as-needed"],         // Disallow to quote properties (of object) when it's not requiered.
    },
 }

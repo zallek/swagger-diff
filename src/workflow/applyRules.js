@@ -30,6 +30,7 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
         });
         return false; // break
       }
+      return true;
     });
 
     if (matchRule) {
@@ -46,6 +47,7 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
         });
         return false; // break
       }
+      return true;
     });
 
     if (matchRule) {
@@ -53,6 +55,7 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
     }
 
     unmatchDiffs = unmatchDiffs.concat(diff);
+    return true;
   });
 
   return {

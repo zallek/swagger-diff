@@ -8,24 +8,27 @@ import chalk from 'chalk';
  * @param  {Array<RawDiff>} options.unmatchDiffs
  * @return {String}
  */
-export default function({errors, warnings, infos, unmatchDiffs}) {
+export default function ({ errors, warnings, infos, unmatchDiffs }) {
   let output = 'swagger-diff\n';
 
   const errorColor = errors.length > 0 ? chalk.red : chalk.white;
   output += errorColor(`Errors (${errors.length})\n`);
   if (errors.length > 0) {
-    output += errors.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n') + '\n';
+    output += errors.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n');
+    output += '\n';
   }
 
   const warningColor = warnings.length > 0 ? chalk.yellow : chalk.white;
   output += warningColor(`Warnings (${warnings.length})\n`);
   if (warnings.length > 0) {
-    output += warnings.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n') + '\n';
+    output += warnings.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n');
+    output += '\n';
   }
 
   if (infos.length > 0) {
     output += `Infos (${infos.length})\n`;
-    output += infos.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n') + '\n';
+    output += infos.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n');
+    output += '\n';
   }
 
   const unmatchedColor = unmatchDiffs.length > 0 ? chalk.yellow : chalk.white;

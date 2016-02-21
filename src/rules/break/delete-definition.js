@@ -1,5 +1,5 @@
 
-export default function deleteDefinition({kind, path, lhs, rhs}) {
+export default function deleteDefinition({ kind, path, lhs, rhs }) {
   const match = kind === 'D'
               && path.length === 2
               && path[0] === 'definitions';
