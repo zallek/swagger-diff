@@ -12,7 +12,7 @@ import defaultConfig from '../defaultConfig.json';
 export default function getConfig(config) {
   let baseConfig;
 
-  if (!config) {
+  if (!config) {
     baseConfig = {};
   } else if (isPlainObject(config)) {
     baseConfig = config;
