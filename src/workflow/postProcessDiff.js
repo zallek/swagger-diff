@@ -43,8 +43,9 @@ export default function postProcessDiff({breaks, smooths, unmatchDiffs}, version
 
     const level = isNumber(ruleConfig) ? ruleConfig
                 : versionDiff && isPlainObject(ruleConfig) ? ruleConfig[versionDiff]
+                : isNumber(globalConfig) ? globalConfig
                 : versionDiff && isPlainObject(globalConfig) ? globalConfig[versionDiff]
-                : globalConfig;
+                : config.default[type];
 
     if (LOG_LEVELS[level]) {
       diff[LOG_LEVELS[level]].push(change);
