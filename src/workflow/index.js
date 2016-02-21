@@ -1,18 +1,14 @@
 /* eslint no-param-reassign:0 */
 
 import deepDiff from 'deep-diff';
-import requireAll from 'require-all';
 import semver from 'semver';
 
 import getConfig from './getConfig';
 import prepareSpec from './prepareSpec';
 import applyRules from './applyRules';
 import postProcessDiff from './postProcessDiff';
-import { BREAK_RULES_DIR, SMOOTH_RULES_DIR } from '../constants';
+import rules from '../rules';
 
-
-const breakRules = requireAll(BREAK_RULES_DIR);
-const smoothRules = requireAll(SMOOTH_RULES_DIR);
 
 /**
  * @param  {string|object} oldSpec - The file path of the old Swagger spec; or a Swagger object.
@@ -60,7 +56,7 @@ export default function swaggerDiff(oldSpec, newSpec, config) {
     const rawDiffs = deepDiff(prepOldSpec, prepNewSpec);
     debug('rawDiffs', rawDiffs);
 
-    const changes = applyRules(rawDiffs, breakRules, smoothRules);
+    const changes = applyRules(rawDiffs, rules.break, rules.smooth);
     debug('changes', changes);
 
     const diffs = config.skipDiffPostProcessing ? changes

@@ -1,22 +1,22 @@
 import chai from 'chai';
 import fs from 'fs';
 import forEach from 'lodash.foreach';
-import requireAll from 'require-all';
 import path from 'path';
+import requireAll from 'require-all';
 
 import swaggerDiff from '../../src/index';
-import { BREAK_RULES_DIR, SMOOTH_RULES_DIR } from '../../src/constants';
+import allRules from '../../src/rules';
 
 
 const RULES_TYPES = [
   {
     label: 'Break Rules',
-    rules: requireAll(BREAK_RULES_DIR),
+    rules: allRules.break,
     testFolder: 'break',
   },
   {
     label: 'Smooth Rules',
-    rules: requireAll(SMOOTH_RULES_DIR),
+    rules: allRules.smooth,
     testFolder: 'smooth',
   },
 ];
