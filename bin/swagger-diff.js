@@ -19,10 +19,10 @@ program
   .option('--no-color', 'Disable color in output')
   .action(function(oldSpec, newSpec, options) {
     if (!oldSpec) {
-      errorHandler(new Error('oldSpec file path is missing'));
+      errorHandler(new Error('oldSpec file path or URL is missing'));
     }
     if (!newSpec) {
-      errorHandler(new Error('newSpec file path is missing'));
+      errorHandler(new Error('newSpec file path or URL is missing'));
     }
     swaggerDiff(oldSpec, newSpec, options.config)
       .then(function(diff) {

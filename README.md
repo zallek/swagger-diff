@@ -23,6 +23,8 @@ $ swagger-diff <old> <new>
 ```
 It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error". It can also write the diff result in a JSON file. Use `-h` for option defails.
 
+*old* and *new* parameters can be either a the **file path or URL** of the swagger file.
+
 Example of CLI output
 ![CLI output example](https://cloud.githubusercontent.com/assets/1886834/12273943/c748b518-b968-11e5-90ac-05102e184c35.png)
 
