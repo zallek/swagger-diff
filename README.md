@@ -58,7 +58,7 @@ Dist folder contains an UMD bundle allowing you to either reference `swagger-dif
 
 Reference `swagger-diff.min.js` in your HTML and use the global variable `SwaggerDiff`.
 ```HTML
-<script src="node_components/swagger-diff/dist/swagger-diff.min.js"></script>
+<script src="node_modules/swagger-diff/dist/swagger-diff.min.js"></script>
 <script>
   SwaggerDiff(oldSpec, newSpec, config).then(function (diff) {
     // Handle result
