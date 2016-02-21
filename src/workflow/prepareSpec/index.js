@@ -51,6 +51,6 @@ export default function prepareSpec(spec) {
     });
 }
 
-function isUrl() {
-  return typeof config === 'string' && spec.indexOf('http') === 0;
+function isUrl(str) {
+  return typeof str === 'string' && str.indexOf('http') === 0;
 }
