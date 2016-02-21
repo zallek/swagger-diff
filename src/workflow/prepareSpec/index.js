@@ -14,7 +14,7 @@ export default function prepareSpec(spec) {
   const debug = require('debug')('swagger-diff:workflow:prepareSpec');
 
   debug('start');
-  if (typeof spec === 'string' && !path.isAbsolute(spec)) {
+  if (typeof spec === 'string' && spec.indexOf('http') !== 0 && !path.isAbsolute(spec)) {
     spec = path.resolve(process.cwd(), spec); // eslint-disable-line no-param-reassign
   }
 
