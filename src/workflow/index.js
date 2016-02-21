@@ -38,14 +38,21 @@ export default function swaggerDiff(oldSpec, newSpec, config) {
     debug('specs perpared');
 
     let versionDiff;
-    if (prepOldSpec.info && prepOldSpec.info.version && prepNewSpec.info && prepNewSpec.info.version) {
-      versionDiff = semver.diff(prepOldSpec.info.version, prepNewSpec.info.version);
-      if (versionDiff === null) {
-        versionDiff = 'unchanged';
+    if (prepOldSpec.info && prepNewSpec.info) {
+      const oldVersion = prepOldSpec.info.version;
+      const newVersion = prepNewSpec.info.version;
+      if (!semver.valid(oldVersion) || !semver.valid(newVersion)) {
+        debug('one swagger file version is not semver compliant => ignore version comparison');
+      } else {
+        versionDiff = semver.diff(oldVersion, newVersion);
+        if (versionDiff === null) {
+          versionDiff = 'unchanged';
+        }
       }
       prepOldSpec.info.version = null;
       prepNewSpec.info.version = null;
     }
+
     debug('versionDiff', versionDiff);
 
     const rawDiffs = deepDiff(prepOldSpec, prepNewSpec);
