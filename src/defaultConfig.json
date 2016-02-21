@@ -12,5 +12,9 @@
       "patch": 2,
       "unchanged": 3
     }
+  },
+  "default": {
+    "breaks": 2,
+    "smooths": 1
   }
 }
