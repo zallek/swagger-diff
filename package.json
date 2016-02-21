@@ -20,7 +20,7 @@
     "build:genRulesIndex": "node generateRulesIndex.js",
     "build:lib": "babel src -d lib && cpy src/**/*.json lib",
     "build:dist": "webpack --config webpack.config.js",
-    "build": "npm run clean && npm run build:lib && npm run build:dist",
+    "build": "npm run clean && npm run build:genRulesIndex && npm run build:lib && npm run build:dist",
     "preversion": "npm run clean && npm run check",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",

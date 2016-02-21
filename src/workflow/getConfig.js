@@ -2,7 +2,7 @@ import fs from 'fs';
 import { readFileSync } from 'jsonfile';
 import defaultsDeep from 'lodash.defaultsdeep';
 import isPlainObject from 'lodash.isplainobject';
-import defaultConfig from '../defaultConfig';
+import defaultConfig from '../defaultConfig.json';
 
 
 /**
@@ -11,17 +11,19 @@ import defaultConfig from '../defaultConfig';
  */
 export default function getConfig(config) {
   let baseConfig = {};
-  if (typeof config === 'string') {
-    baseConfig = parseConfigFile(config);
-  }
+
   if (isPlainObject(config)) {
     baseConfig = config;
+  } else if (!process.browser && typeof config === 'string') {
+    baseConfig = readConfigFile(config);
+  } else {
+    throw new Error('Incorrect config, only object is supported in browser');
   }
 
   return defaultsDeep(baseConfig, defaultConfig);
 }
 
-function parseConfigFile(fileName) {
+function readConfigFile(fileName) {
   try {
     fs.lstatSync(fileName);
   } catch (e) {
