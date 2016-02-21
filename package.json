@@ -75,6 +75,6 @@
     "yargs": "^3.5.3"
   },
   "bin": {
-    "swagger": "bin/swagger-diff.js"
+    "swagger-diff": "bin/swagger-diff.js"
   }
 }
