@@ -5,28 +5,77 @@
 
 This package provides utils and CLI to compute the diff between two swagger API specifications. Output diff can be configured according to version change.
 
+
 ## Purpose
 - Identify breaking and smooth changes.
 - Ensure API versioning consistency.
 - Compute API changelogs.
 - Prevent unexpected API changes.
 
-## Compatilibity
+
+## Swagger Compatilibity
 
 Supports only [swagger spec 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md).
 
 
+## Installation
+Install using npm:
+```SH
+npm install swagger-diff
+```
+
+
 ## Usage
+
+### CLI
 The binary allows you to use swagger-diff in CLI.
 ```bash
 $ swagger-diff <old> <new>
 ```
 It prints the diff between old and new swagger files according to [configuration](#configuration) and returns false if any diff "error". It can also write the diff result in a JSON file. Use `-h` for option defails.
 
-*old* and *new* parameters can be either the **file path or URL** of the swagger file.
+**Note:** `old` and `new` parameters can either be the file path or the URL of the swagger file.
 
 Example of CLI output
 ![CLI output example](https://cloud.githubusercontent.com/assets/1886834/12273943/c748b518-b968-11e5-90ac-05102e184c35.png)
+
+
+### Node
+```JS
+var SwaggerDiff = require('swagger-diff');
+
+SwaggerDiff(oldSpec, newSpec, config).then(function (diff) {
+  // Handle result
+});
+```
+**Note:** on nodeJS, `oldSpec` and `newSpec` can either be a file path, a URL or a plain object. `config` can be a file path or a plain object.
+
+**Note**: Please refer to [How it works](#how-it-works) section for details about output.
+
+
+### Browsers
+Dist folder contains an UMD bundle allowing you to either reference `swagger-diff.min.js` in your HTML or import module using Require.js.
+
+Reference `swagger-diff.min.js` in your HTML and use the global variable `SwaggerDiff`.
+```HTML
+<script src="node_components/swagger-diff/dist/swagger-diff.min.js"></script>
+<script>
+  SwaggerDiff(oldSpec, newSpec, config).then(function (diff) {
+    // Handle result
+  });
+</script>
+```
+Or, if you're using AMD (Require.js), then import it into your module:
+```JS
+define(["SwaggerDiff"], function(SwaggerDiff) {
+  SwaggerDiff(oldSpec, newSpec, config).then(function (diff) {
+    // Handle result
+  });
+})
+```
+**Note:** in browser, `oldSpec` and `newSpec` can only be a URL or a plain object. `config` can only be a plain object.
+
+**Note**: Please refer to [How it works](#how-it-works) section for details about output.
 
 
 ## Diffs
