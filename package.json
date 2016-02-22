@@ -59,7 +59,8 @@
     "lodash.pick": "^3.1.0",
     "lodash.zipobject": "^3.0.0",
     "semver": "^5.0.3",
-    "swagger-parser": "^3.3.0"
+    "swagger-parser": "^3.3.0",
+    "json-schema-ref-parser": "zallek/json-schema-ref-parser#v1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
