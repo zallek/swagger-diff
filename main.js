@@ -5,8 +5,8 @@ $(function() {
 });
 
 function handleQueryStringParams() {
-  var oldSpec = window.location.search.match(/oldSpec=([^&]+)/);
-  var newSpec = window.location.search.match(/newSpec=([^&]+)/);
+  var oldSpec = window.location.search.match(/oldSpecUrl=([^&]+)/);
+  var newSpec = window.location.search.match(/newSpecUrl=([^&]+)/);
 
   if (oldSpec && oldSpec.length > 1) {
     $('#oldSwaggerSpec').val(decodeURIComponent(oldSpec[1]));
