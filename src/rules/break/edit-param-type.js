@@ -1,5 +1,5 @@
 
-export default function editParamType({kind, path, lhs, rhs}) {
+export default function editParamType({ kind, path, lhs, rhs }) {
   const match = kind === 'E'
               && path.length === 6
               && path[0] === 'paths'

@@ -1,5 +1,5 @@
 
-export default function deleteResponse({kind, path, lhs, rhs}) {
+export default function deleteResponse({ kind, path, lhs, rhs }) {
   const match = kind === 'D'
               && path.length === 5
               && path[0] === 'paths'

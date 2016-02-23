@@ -1,6 +1,6 @@
 import get from 'lodash.get';
 
-export default function addResponse({kind, path, lhs, rhs}) {
+export default function addResponse({ kind, path, lhs, rhs }) {
   const match = kind === 'N'
               && path.length === 5
               && path[0] === 'paths'

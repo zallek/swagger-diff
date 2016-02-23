@@ -1,5 +1,5 @@
 
-export default function addDefinition({kind, path, lhs, rhs}) {
+export default function addDefinition({ kind, path, lhs, rhs }) {
   const match = kind === 'N'
               && path.length === 2
               && path[0] === 'definitions';

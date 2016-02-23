@@ -3,6 +3,7 @@ import indexParameters from './indexParameters';
 import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
 import inlineRequiredProperties from './inlineRequiredProperties';
+import isPlainObject from 'lodash.isplainobject';
 import path from 'path';
 
 
@@ -14,11 +15,26 @@ export default function prepareSpec(spec) {
   const debug = require('debug')('swagger-diff:workflow:prepareSpec');
 
   debug('start');
-  if (typeof spec === 'string' && spec.indexOf('http') !== 0 && !path.isAbsolute(spec)) {
-    spec = path.resolve(process.cwd(), spec); // eslint-disable-line no-param-reassign
+
+  let specRef;
+  if (isPlainObject(spec)) {
+    specRef = spec;
+  } else if (isUrl(spec)) {
+    specRef = spec;
+  } else if (typeof config === 'string') {
+    if (process.browser) {
+      throw new Error('Incorrect spec, only URL or object are supported in browser');
+    } else {
+      specRef = spec;
+      if (!path.isAbsolute(specRef)) {
+        specRef = path.resolve(process.cwd(), specRef);
+      }
+    }
+  } else {
+    throw new Error('Incorrect spec');
   }
 
-  return dereference(spec)
+  return dereference(specRef)
     .then(dereferencedSpec => {
       debug('dereferenced');
       let specs = dereferencedSpec;
@@ -37,4 +53,8 @@ export default function prepareSpec(spec) {
 
       return specs;
     });
+}
+
+function isUrl(str) {
+  return typeof str === 'string' && str.indexOf('http') === 0;
 }

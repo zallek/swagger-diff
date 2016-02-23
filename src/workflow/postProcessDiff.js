@@ -25,7 +25,7 @@ const LOG_LEVELS = {
  * }
  * @note Diff: {ruleId: String, message: String}
  */
-export default function postProcessDiff({breaks, smooths, unmatchDiffs}, versionDiff, config) {
+export default function postProcessDiff({ breaks, smooths, unmatchDiffs }, versionDiff, config) {
   const diff = {
     errors: [],
     warnings: [],
@@ -37,7 +37,7 @@ export default function postProcessDiff({breaks, smooths, unmatchDiffs}, version
     { changes: breaks, type: 'breaks' },
     { changes: smooths, type: 'smooths' },
   ],
-  ({changes, type}) => forEach(changes, change => {
+  ({ changes, type }) => forEach(changes, change => {
     const ruleConfig = config.rules && config.rules[change.ruleId];
     const globalConfig = config.changes[type];
 

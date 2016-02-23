@@ -1,5 +1,5 @@
 
-export default function deleteParam({kind, path, lhs, rhs}) {
+export default function deleteParam({ kind, path, lhs, rhs }) {
   const match = kind === 'D'
               && path.length === 5
               && path[0] === 'paths'

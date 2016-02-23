@@ -10,18 +10,26 @@ import defaultConfig from '../defaultConfig';
  * @return {Object}
  */
 export default function getConfig(config) {
-  let baseConfig = {};
-  if (typeof config === 'string') {
-    baseConfig = parseConfigFile(config);
-  }
-  if (isPlainObject(config)) {
+  let baseConfig;
+
+  if (!config) {
+    baseConfig = {};
+  } else if (isPlainObject(config)) {
     baseConfig = config;
+  } else if (typeof config === 'string') {
+    if (process.browser) {
+      throw new Error('Incorrect config, only object is supported in browser');
+    } else {
+      baseConfig = readConfigFile(config);
+    }
+  } else {
+    throw new Error('Incorrect config');
   }
 
   return defaultsDeep(baseConfig, defaultConfig);
 }
 
-function parseConfigFile(fileName) {
+function readConfigFile(fileName) {
   try {
     fs.lstatSync(fileName);
   } catch (e) {

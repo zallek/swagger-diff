@@ -1,5 +1,5 @@
 
-export default function editResponse({kind, path, lhs, rhs}) {
+export default function editResponse({ kind, path, lhs, rhs }) {
   const match = kind === 'E'
               && path.length === 7
               && path[0] === 'paths'

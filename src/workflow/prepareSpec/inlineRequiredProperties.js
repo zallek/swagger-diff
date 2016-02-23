@@ -1,3 +1,5 @@
+/* eslint no-param-reassign:0 */
+
 import forEach from 'lodash.foreach';
 import isObject from 'lodash.isobject';
 
