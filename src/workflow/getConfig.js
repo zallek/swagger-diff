@@ -2,7 +2,7 @@ import fs from 'fs';
 import { readFileSync } from 'jsonfile';
 import defaultsDeep from 'lodash.defaultsdeep';
 import isPlainObject from 'lodash.isplainobject';
-import defaultConfig from '../defaultConfig.json';
+import defaultConfig from '../defaultConfig';
 
 
 /**
