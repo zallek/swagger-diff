@@ -1,3 +1,8 @@
+/**
+  Generated File
+  Do not manually modify, use `npm run build:genRulesIndex` instead.
+**/
+
 export default {
   break: {
     'add-required-object-property': require('./break/add-required-object-property.js'),

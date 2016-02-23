@@ -19,6 +19,10 @@ var smoothRulesIds = fs.readdirSync(SMOOTH_RULES_DIR).map(function (file) {
 
 // Generate JS code
 var rulesIndex = (
+'/**\n' +
+'  Generated File\n' +
+'  Do not manually modify, use `npm run build:genRulesIndex` instead.\n' +
+'**/\n\n' +
 'export default {\n' +
 '  break: {\n' +
 breakRulesIds.map(function (id) {
