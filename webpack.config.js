@@ -26,7 +26,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.json'],
-    modulesDirectories: ['src', 'node_modules'],
   },
   plugins: [
     new webpack.DefinePlugin({
