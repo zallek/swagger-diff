@@ -21,13 +21,17 @@ export default function prepareSpec(spec) {
     specRef = spec;
   } else if (isUrl(spec)) {
     specRef = spec;
-  } else if (!process.browser && typeof spec === 'string') {
-    specRef = spec;
-    if (!path.isAbsolute(specRef)) {
-      specRef = path.resolve(process.cwd(), specRef);
+  } else if (typeof config === 'string') {
+    if (process.browser) {
+      throw new Error('Incorrect spec, only URL or object are supported in browser');
+    } else {
+      specRef = spec;
+      if (!path.isAbsolute(specRef)) {
+        specRef = path.resolve(process.cwd(), specRef);
+      }
     }
   } else {
-    throw new Error('Incorrect spec, only URL or object are supported in browser');
+    throw new Error('Incorrect spec');
   }
 
   return dereference(specRef)

@@ -16,10 +16,14 @@ export default function getConfig(config) {
     baseConfig = {};
   } else if (isPlainObject(config)) {
     baseConfig = config;
-  } else if (!process.browser && typeof config === 'string') {
-    baseConfig = readConfigFile(config);
+  } else if (typeof config === 'string') {
+    if (process.browser) {
+      throw new Error('Incorrect config, only object is supported in browser');
+    } else {
+      baseConfig = readConfigFile(config);
+    }
   } else {
-    throw new Error('Incorrect config, only object is supported in browser');
+    throw new Error('Incorrect config');
   }
 
   return defaultsDeep(baseConfig, defaultConfig);
