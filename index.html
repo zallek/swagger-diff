@@ -14,24 +14,31 @@
       <h1>Swagger Diff</h1>
       <h2>Input</h2>
       <form id="compareForm" class="row">
-        <div class="form-group col-md-6">
-          <label for="oldSwaggerSpec">Old Spec 2.0</label>
-          <input type="text" class="form-control" id="oldSwaggerSpec" placeholder="old swagger URL">
+        <div class="form-group col-md-5">
+          <label for="oldSpecUrl">Old Spec 2.0</label>
+          <input type="text" class="form-control" id="oldSpecUrl" placeholder="old swagger URL">
         </div>
-        <div class="form-group col-md-6">
-          <label for="newSwaggerSpec">New Spec 2.0</label>
-          <input type="text" class="form-control" id="newSwaggerSpec" placeholder="new swagger URL">
+        <div class="form-group col-md-5">
+          <label for="newSpecUrl">New Spec 2.0</label>
+          <input type="text" class="form-control" id="newSpecUrl" placeholder="new swagger URL">
         </div>
-        <button type="submit" class="btn btn-primary center-block">Compare</button>
+        <div class="form-group col-md-2">
+          <label for="difCfonfig">Configuration</label>
+          <div id="diffConfig"></div>
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary center-block">Compare</button>
+        </div>
       </form>
-      <div id="diff-result">
+      <div class="diff-result">
         <h2>Result<h2>
-        <textarea class="form-control"></textarea>
+        <textarea id="diff-result-area" class="form-control"></textarea>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/zallek/41b44903568b64a5675f/raw/4dbf9eee2faca8da7f828f6b277d79677a4d6f8d/swagger-diff.min.js"></script><!-- till available on jsdelivr -->
+    <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/swagger-diff/0.3.0/swagger-diff.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
