@@ -35,10 +35,10 @@ function startCompare(e) {
 
   SwaggerDiff(oldSpec, newSpec)
     .then(function (diff) {
-      $('#diff-result textarea').text(JSON.stringify(diff, null, 2));
+      $('#diff-result-area').text(JSON.stringify(diff, null, 2));
     })
     .catch(function(err) {
-      $('#diff-result textarea').text(err.message);
+      $('#diff-result-area').text(err.message);
     });
 }
 
