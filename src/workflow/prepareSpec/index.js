@@ -21,7 +21,7 @@ export default function prepareSpec(spec) {
     specRef = spec;
   } else if (isUrl(spec)) {
     specRef = spec;
-  } else if (typeof config === 'string') {
+  } else if (typeof spec === 'string') {
     if (process.browser) {
       throw new Error('Incorrect spec, only URL or object are supported in browser');
     } else {
