@@ -1,6 +1,6 @@
 {
   "name": "swagger-diff",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Swagger Diff",
   "author": "Nicolas Fortin <nicolas.fortin37@gmail.com>",
   "license": "MIT",
