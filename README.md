@@ -161,7 +161,7 @@ You can also configure specific level of level for some rules.
 
 ## How it works
 
-To compute the diff, it exectutes a workflow composed of 3 main steps.
+To compute the diff, it exectutes a workflow composed of 4 main steps.
 
 [![How it works][schema-image]][schema-url]
 
