@@ -26,6 +26,7 @@ export default {
   },
   smooth: {
     'add-definition': require('./smooth/add-definition.js'),
+    'add-description': require('./smooth/add-description.js'),
     'add-optional-object-property': require('./smooth/add-optional-object-property.js'),
     'add-optional-param': require('./smooth/add-optional-param.js'),
     'add-path': require('./smooth/add-path.js'),
