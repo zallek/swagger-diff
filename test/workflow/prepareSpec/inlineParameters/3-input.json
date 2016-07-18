@@ -1,0 +1,16 @@
+{
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "parameters": [
+        {
+          "required": true,
+          "type": "string",
+          "name": "username",
+          "in": "path"
+        }
+      ],
+      "get": {
+      }
+    }
+  }
+}

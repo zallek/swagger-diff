@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/": {
+      "get": {
+      }
+    }
+  },
+  "definitions": {
+    "UrlsQuery": {
+      "type": "object",
+      "properties": {
+        "foo": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

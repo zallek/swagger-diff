@@ -1,0 +1,44 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/": {
+      "get": {
+        "parameters": [
+          {
+            "name": "CsvExportStatus",
+            "schema": {
+              "$ref": "#/definitions/CsvExportStatus"
+            },
+            "in": "body"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CsvExportStatus": {
+      "query": {
+        "readOnly": false,
+        "description": "",
+        "$ref": "#/definitions/UrlsQuery"
+      }
+    },
+    "UrlsQuery": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "description": "",
+          "items": {
+            "type": "string"
+          },
+          "readOnly": false,
+          "type": "array"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "parameters": [
+        {
+          "required": true,
+          "type": "string",
+          "name": "username",
+          "in": "path"
+        }
+      ],
+      "get": {
+        "description": "List of allowed domains for a defined username.",
+        "parameters": [
+          {
+            "description": "",
+            "required": true,
+            "in": "formData",
+            "type": "string",
+            "name": "rules_config"
+          }
+        ]
+      }
+    }
+  }
+}

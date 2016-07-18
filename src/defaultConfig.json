@@ -1,0 +1,20 @@
+{
+  "changes": {
+    "breaks": {
+      "major": 2,
+      "minor": 3,
+      "patch": 3,
+      "unchanged": 3
+    },
+    "smooths": {
+      "major": 0,
+      "minor": 1,
+      "patch": 2,
+      "unchanged": 3
+    }
+  },
+  "default": {
+    "breaks": 2,
+    "smooths": 1
+  }
+}

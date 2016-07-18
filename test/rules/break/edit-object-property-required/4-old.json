@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/": {
+      "get": {
+      }
+    }
+  },
+  "definitions": {
+    "CsvExportStatus": {
+      "readOnly": false,
+      "description": "",
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "object",
+          "required": false,
+          "properties": {
+            "foo": {
+              "required": false,
+              "type": "integer"
+            },
+            "bar": {
+              "required": true,
+              "type": "string"
+            },
+            "koo": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}
