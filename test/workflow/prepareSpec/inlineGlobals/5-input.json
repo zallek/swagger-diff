@@ -1,0 +1,11 @@
+{
+  "lvl1": 1,
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "lvl2": 2,
+      "get": {
+        "lvl3": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/ (get) - Param username collection format turn from csv to tsv",
+      "ruleId": "edit-param-collection-format"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

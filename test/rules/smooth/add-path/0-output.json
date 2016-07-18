@@ -1,0 +1,10 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "message": "/users/{username}/ - Added",
+      "ruleId": "add-path"
+    }
+  ],
+  "unmatchDiffs": []
+}

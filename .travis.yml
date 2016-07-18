@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "0.12"
+  - "4.0"
+before_install:
+install:
+script:
+  - npm run check
+  - npm run build

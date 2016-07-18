@@ -1,0 +1,14 @@
+{
+  "breaks": [
+    {
+      "message": "definitions CsvExportStatus - Property query became required",
+      "ruleId": "edit-object-property-required"
+    },
+    {
+      "message": "definitions CsvExportStatus properties query - Property foo became required",
+      "ruleId": "edit-object-property-required"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

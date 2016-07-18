@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "paths /users/{username}/ get parameters username - Array items type turn from string to integer",
+      "ruleId": "edit-array-items-type"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

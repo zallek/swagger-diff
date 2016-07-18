@@ -1,0 +1,36 @@
+{
+  "info": {
+    "version": "1.1.0"
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/users/{username}/allowed_domains/": {
+      "get": {
+        "schemes": ["http"],
+        "consumes": [],
+        "produces": ["text/plain; charset=utf-8"],
+        "security": ["api_key"]
+      }
+    },
+    "/projects/{username}/{project_slug}/segments/dry_run/": {
+      "get": {
+        "schemes": ["http"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "security": []
+      },
+      "post": {
+        "schemes": ["https"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "security": ["api_key"]
+      }
+    }
+  }
+}

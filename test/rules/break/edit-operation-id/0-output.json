@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/ (get) - OperationId turned from getUser! to getUser",
+      "ruleId": "edit-operation-id"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

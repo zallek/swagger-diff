@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {
+    "/users/{username}/": {
+      "get": {
+        "parameters": [
+          {
+            "name": "UrlsQuery",
+            "schema": {
+              "$ref": "#/definitions/UrlsQuery"
+            },
+            "in": "body"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "UrlsQuery": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "description": "",
+          "items": {
+            "type": "string"
+          },
+          "readOnly": false,
+          "type": "array"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/ (get) - Param username became required",
+      "ruleId": "edit-param-required"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

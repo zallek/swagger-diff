@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "paths /users/{username}/ get parameters param - Property foo became required",
+      "ruleId": "edit-object-property-required"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

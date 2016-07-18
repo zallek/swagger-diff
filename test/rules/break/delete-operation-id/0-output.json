@@ -1,0 +1,10 @@
+{
+  "breaks": [
+    {
+      "message": "/users/{username}/ (get) - OperationId (getUser) deleted",
+      "ruleId": "delete-operation-id"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
