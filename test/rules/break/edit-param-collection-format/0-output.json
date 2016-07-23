@@ -1,8 +1,13 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-param-collection-format",
       "message": "/users/{username}/ (get) - Param username collection format turn from csv to tsv",
-      "ruleId": "edit-param-collection-format"
+      "path": "/users/{username}/",
+      "method": "get",
+      "paramName": "username",
+      "previousFormat": "csv",
+      "currentFormat": "tsv"
     }
   ],
   "smooths": [],

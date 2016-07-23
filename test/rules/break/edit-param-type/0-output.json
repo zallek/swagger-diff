@@ -1,8 +1,13 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-param-type",
       "message": "/users/{username}/ (get) - Param username type turn from from string to integer",
-      "ruleId": "edit-param-type"
+      "path": "/users/{username}/",
+      "method": "get",
+      "responseId": "username",
+      "previousparamName": "string",
+      "currentparamName": "integer"
     }
   ],
   "smooths": [],

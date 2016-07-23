@@ -7,7 +7,12 @@ export default function editSummary({ kind, path, lhs, rhs }) {
   if (match) {
     const pathId = path[1];
     const method = path[2];
-    return `${pathId} (${method}) - Summary turned from ${lhs} to ${rhs}`;
+    return {
+      message: `${pathId} (${method}) - Summary turned from ${lhs} to ${rhs}`,
+      method,
+      previousSummary: lhs,
+      currentSummary: rhs,
+    };
   }
   return false;
 }

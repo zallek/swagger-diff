@@ -10,7 +10,12 @@ export default function editParamRequired({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Param ${paramName} became required`;
+    return {
+      message: `${pathId} (${method}) - Param ${paramName} became required`,
+      path: pathId,
+      method,
+      paramName,
+    };
   }
   return false;
 }

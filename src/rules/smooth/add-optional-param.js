@@ -9,7 +9,12 @@ export default function addOptionalParam({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Optional param ${paramName} added`;
+    return {
+      message: `${pathId} (${method}) - Optional param ${paramName} added`,
+      path: pathId,
+      method,
+      paramName,
+    };
   }
   return false;
 }

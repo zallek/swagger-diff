@@ -1,8 +1,10 @@
 {
   "breaks": [
     {
-      "message": "definitions CsvExportStatus properties query - Property bar became required",
-      "ruleId": "edit-object-property-required"
+      "ruleId": "edit-object-property-required",
+      "message": "definitions/CsvExportStatus/properties/query - Property bar became required",
+      "path": "definitions/CsvExportStatus/properties/query",
+      "requiredProperty": "bar"
     }
   ],
   "smooths": [],

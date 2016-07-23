@@ -9,7 +9,14 @@ export default function editParamType({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Param ${paramName} type turn from from ${lhs} to ${rhs}`;
+    return {
+      message: `${pathId} (${method}) - Param ${paramName} type turn from from ${lhs} to ${rhs}`,
+      path: pathId,
+      method,
+      responseId: paramName,
+      previousparamName: lhs,
+      currentparamName: rhs,
+    };
   }
   return false;
 }

@@ -1,8 +1,11 @@
 {
   "breaks": [
     {
+      "ruleId": "delete-operation-id",
       "message": "/users/{username}/ (get) - OperationId (getUser) deleted",
-      "ruleId": "delete-operation-id"
+      "path": "/users/{username}/",
+      "method": "get",
+      "operationId": "getUser"
     }
   ],
   "smooths": [],

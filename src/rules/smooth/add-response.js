@@ -10,7 +10,12 @@ export default function addResponse({ kind, path, lhs, rhs }) {
     const method = path[2];
     const responseId = path[4];
     const definition = get(rhs, ['schema', '$ref']);
-    return `${pathId} (${method}) - Response ${responseId} added to ${definition || rhs}`;
+    return {
+      message: `${pathId} (${method}) - Response ${responseId} added to ${definition || rhs}`,
+      path: pathId,
+      method,
+      responseId,
+    };
   }
   return false;
 }

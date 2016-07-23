@@ -5,7 +5,10 @@ export default function deleteDefinition({ kind, path, lhs, rhs }) {
               && path[0] === 'definitions';
   if (match) {
     const pathId = path[1];
-    return `${pathId} - Deleted`;
+    return {
+      message: `${pathId} - Deleted`,
+      path: pathId,
+    };
   }
   return false;
 }

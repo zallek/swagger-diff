@@ -7,7 +7,13 @@ export default function editOperationId({ kind, path, lhs, rhs }) {
   if (match) {
     const pathId = path[1];
     const method = path[2];
-    return `${pathId} (${method}) - OperationId turned from ${lhs} to ${rhs}`;
+    return {
+      message: `${pathId} (${method}) - OperationId turned from ${lhs} to ${rhs}`,
+      path: pathId,
+      method,
+      previousOperationId: lhs,
+      currentOperationId: rhs,
+    };
   }
   return false;
 }
