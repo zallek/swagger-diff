@@ -1,11 +1,12 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb-base",
   "parser": "babel-eslint",
   "env": {
     "node": true
   },
   "rules": {
     "arrow-body-style": 0,    // Boring rule
+    "global-require": 0,
     "id-length": 0,           // There is no point to disallow declaring variable as short as `x` or `y`.
     "no-nested-ternary": 0,   // Nested ternary are fine for conditionnal adffectation if indented properly.
 
