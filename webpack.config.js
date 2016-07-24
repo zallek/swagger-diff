@@ -1,6 +1,4 @@
-'use strict';
-/* eslint no-var:0 */
-
+/* eslint no-var:0, import/no-extraneous-dependencies: 0 */
 var webpack = require('webpack');
 
 module.exports = {
