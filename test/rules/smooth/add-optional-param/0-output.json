@@ -6,7 +6,7 @@
       "message": "/users/{username}/ (get) - Optional param username added",
       "path": "/users/{username}/",
       "method": "get",
-      "propertyName": "username"
+      "paramName": "username"
     }
   ],
   "unmatchDiffs": []
