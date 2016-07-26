@@ -8,7 +8,12 @@ export default function deleteParam({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Param ${paramName} deleted`;
+    return {
+      message: `${pathId} (${method}) - Param ${paramName} deleted`,
+      path: pathId,
+      method,
+      parameterName: paramName,
+    };
   }
   return false;
 }

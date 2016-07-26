@@ -1,5 +1,6 @@
 import forEach from 'lodash.foreach';
 
+const extend = require('extend');
 
 /**
  * @param {Array<RawDiff>} diffs Result of diff module
@@ -24,10 +25,9 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
       const ruleResult = rule(diff);
       if (ruleResult) {
         matchRule = true;
-        breaks = breaks.concat({
-          ruleId,
-          message: ruleResult,
-        });
+        const ruleMessage = { ruleId };
+        extend(ruleMessage, ruleResult);
+        breaks = breaks.concat(ruleMessage);
         return false; // break
       }
       return true;
@@ -41,10 +41,9 @@ export default function applyRules(diffs, breakRules = {}, smoothRules = {}) {
       const ruleResult = rule(diff);
       if (ruleResult) {
         matchRule = true;
-        smooths = smooths.concat({
-          ruleId,
-          message: ruleResult,
-        });
+        const ruleMessage = { ruleId };
+        extend(ruleMessage, ruleResult);
+        smooths = smooths.concat(ruleMessage);
         return false; // break
       }
       return true;

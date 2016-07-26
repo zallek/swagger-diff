@@ -9,7 +9,12 @@ export default function addRequiredParam({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Required param ${paramName} added`;
+    return {
+      message: `${pathId} (${method}) - Required param ${paramName} added`,
+      path: pathId,
+      method,
+      paramAdded: paramName,
+    };
   }
   return false;
 }

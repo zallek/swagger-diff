@@ -5,6 +5,7 @@
 
 export default {
   break: {
+    '.DS_St': require('./break/.DS_St.js'),
     'add-required-object-property': require('./break/add-required-object-property.js'),
     'add-required-param': require('./break/add-required-param.js'),
     'delete-definition': require('./break/delete-definition.js'),
@@ -25,6 +26,7 @@ export default {
     'edit-response': require('./break/edit-response.js'),
   },
   smooth: {
+    '.DS_St': require('./smooth/.DS_St.js'),
     'add-definition': require('./smooth/add-definition.js'),
     'add-description': require('./smooth/add-description.js'),
     'add-optional-object-property': require('./smooth/add-optional-object-property.js'),

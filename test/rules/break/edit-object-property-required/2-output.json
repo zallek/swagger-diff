@@ -1,8 +1,10 @@
 {
   "breaks": [
     {
-      "message": "definitions UrlsQuery - Property foo became required",
-      "ruleId": "edit-object-property-required"
+      "ruleId": "edit-object-property-required",
+      "message": "definitions/UrlsQuery - Property foo became required",
+      "path": "definitions/UrlsQuery",
+      "requiredProperty": "foo"
     }
   ],
   "smooths": [],

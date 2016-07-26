@@ -2,8 +2,9 @@
   "breaks": [],
   "smooths": [
     {
+      "ruleId": "add-path",
       "message": "/users/{username}/ - Added",
-      "ruleId": "add-path"
+      "path": "/users/{username}/"
     }
   ],
   "unmatchDiffs": []

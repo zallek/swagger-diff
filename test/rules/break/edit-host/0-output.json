@@ -1,8 +1,10 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-host",
       "message": "Host turned from www.example.com to www.example1.com",
-      "ruleId": "edit-host"
+      "previousHost": "www.example.com",
+      "currentHost": "www.example1.com"
     }
   ],
   "smooths": [],

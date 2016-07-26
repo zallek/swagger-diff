@@ -1,8 +1,9 @@
 {
   "breaks": [
     {
+      "ruleId": "delete-path",
       "message": "/users/{username}/ - Deleted",
-      "ruleId": "delete-path"
+      "path": "/users/{username}/"
     }
   ],
   "smooths": [],
