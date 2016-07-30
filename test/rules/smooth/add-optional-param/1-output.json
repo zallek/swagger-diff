@@ -2,8 +2,11 @@
   "breaks": [],
   "smooths": [
     {
+      "ruleId": "add-optional-param",
       "message": "/users/{username}/ (get) - Optional param username added",
-      "ruleId": "add-optional-param"
+      "path": "/users/{username}/",
+      "method": "get",
+      "param": "username"
     }
   ],
   "unmatchDiffs": []

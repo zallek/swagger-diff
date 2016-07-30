@@ -1,8 +1,10 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-base-path",
       "message": "Base path turned from /v1 to /v2",
-      "ruleId": "edit-base-path"
+      "previousBasePath": "/v1",
+      "currentBasePath": "/v2"
     }
   ],
   "smooths": [],

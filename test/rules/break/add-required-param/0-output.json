@@ -1,8 +1,11 @@
 {
   "breaks": [
     {
+      "ruleId": "add-required-param",
       "message": "/users/{username}/ (get) - Required param username added",
-      "ruleId": "add-required-param"
+      "path": "/users/{username}/",
+      "method": "get",
+      "param": "username"
     }
   ],
   "smooths": [],

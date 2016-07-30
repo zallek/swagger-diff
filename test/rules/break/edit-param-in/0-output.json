@@ -1,8 +1,13 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-param-in",
       "message": "/users/{username}/ (get) - Param username in turn from path to query",
-      "ruleId": "edit-param-in"
+      "path": "/users/{username}/",
+      "method": "get",
+      "param": "username",
+      "previousIn": "path",
+      "currentIn": "query"
     }
   ],
   "smooths": [],

@@ -1,8 +1,12 @@
 {
   "breaks": [
     {
+      "ruleId": "edit-operation-id",
       "message": "/users/{username}/ (get) - OperationId turned from getUser! to getUser",
-      "ruleId": "edit-operation-id"
+      "path": "/users/{username}/",
+      "method": "get",
+      "previousOperationId": "getUser!",
+      "currentOperationId": "getUser"
     }
   ],
   "smooths": [],
