@@ -5,7 +5,10 @@ export default function addPath({ kind, path, lhs, rhs }) {
               && path[0] === 'paths';
   if (match) {
     const pathId = path[1];
-    return `${pathId} - Added`;
+    return {
+      message: `${pathId} - Added`,
+      path: pathId,
+    };
   }
   return false;
 }
