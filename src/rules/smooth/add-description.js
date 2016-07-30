@@ -6,7 +6,12 @@ export default function editDescription({ kind, path, lhs, rhs }) {
   if (match) {
     const pathId = path[1];
     const method = path[2];
-    return `${pathId} (${method}) - Description added: ${rhs}`;
+    return {
+      message: `${pathId} (${method}) - Description added: ${rhs}`,
+      path: pathId,
+      method,
+      description: rhs,
+    };
   }
   return false;
 }

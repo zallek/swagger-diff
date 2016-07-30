@@ -1,10 +1,10 @@
-import path from 'path';
-import isPlainObject from 'lodash.isplainobject';
 import dereference from './dereference';
 import indexParameters from './indexParameters';
 import inlineGlobals from './inlineGlobals';
 import inlineParameters from './inlineParameters';
 import inlineRequiredProperties from './inlineRequiredProperties';
+import isPlainObject from 'lodash.isplainobject';
+import path from 'path';
 
 
 /**

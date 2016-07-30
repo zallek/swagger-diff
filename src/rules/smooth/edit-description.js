@@ -6,7 +6,13 @@ export default function editDescription({ kind, path, lhs, rhs }) {
   if (match) {
     const pathId = path[1];
     const method = path[2];
-    return `${pathId} (${method}) - Description turned from ${lhs} to ${rhs}`;
+    return {
+      message: `${pathId} (${method}) - Description turned from ${lhs} to ${rhs}`,
+      path: pathId,
+      method,
+      previousDescription: lhs,
+      currentDescription: rhs,
+    };
   }
   return false;
 }

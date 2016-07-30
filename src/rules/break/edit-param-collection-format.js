@@ -10,7 +10,14 @@ export default function editParamCollectionFormat({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const paramName = path[4];
-    return `${pathId} (${method}) - Param ${paramName} collection format turn from ${lhs || '(none)'} to ${rhs || '(none)'}`;
+    return {
+      message: `${pathId} (${method}) - Param ${paramName} collection format turn from ${lhs || '(none)'} to ${rhs || '(none)'}`,
+      path: pathId,
+      method,
+      param: paramName,
+      previousFormat: lhs,
+      currentFormat: rhs,
+    };
   }
   return false;
 }

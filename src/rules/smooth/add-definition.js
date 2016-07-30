@@ -5,7 +5,10 @@ export default function addDefinition({ kind, path, lhs, rhs }) {
               && path[0] === 'definitions';
   if (match) {
     const pathId = path[1];
-    return `${pathId} - Added`;
+    return {
+      message: `${pathId} - Added`,
+      path: pathId,
+    };
   }
   return false;
 }

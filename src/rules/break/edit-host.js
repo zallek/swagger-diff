@@ -4,7 +4,11 @@ export default function editHost({ kind, path, lhs, rhs }) {
               && path.length === 1
               && path[0] === 'host';
   if (match) {
-    return `Host turned from ${lhs} to ${rhs}`;
+    return {
+      message: `Host turned from ${lhs} to ${rhs}`,
+      previousHost: lhs,
+      currentHost: rhs,
+    };
   }
   return false;
 }

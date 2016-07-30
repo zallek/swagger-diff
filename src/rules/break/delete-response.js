@@ -8,7 +8,12 @@ export default function deleteResponse({ kind, path, lhs, rhs }) {
     const pathId = path[1];
     const method = path[2];
     const responseId = path[4];
-    return `${pathId} (${method}) - Response ${responseId} deleted`;
+    return {
+      message: `${pathId} (${method}) - Response ${responseId} deleted`,
+      path: pathId,
+      reponseId: responseId,
+      method,
+    };
   }
   return false;
 }

@@ -8,7 +8,12 @@ export default function deleteProduce({ kind, path, index, item }) {
   if (match) {
     const pathId = path[1];
     const method = path[2];
-    return `${pathId} (${method}) - Produces ${item.lhs} deleted`;
+    return {
+      message: `${pathId} (${method}) - Produces ${item.lhs} deleted`,
+      path: pathId,
+      method,
+      produce: item.lhs,
+    };
   }
   return false;
 }
