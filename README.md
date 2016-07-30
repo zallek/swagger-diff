@@ -193,4 +193,4 @@ Post process diffs to output errors, warnings, infos according to configuration 
 [travis-url]: https://travis-ci.org/zallek/swagger-diff
 [travis-image]: https://travis-ci.org/zallek/swagger-diff.svg?branch=master
 [schema-url]: https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/edit?usp=sharing
-[schema-image]: https://cloud.githubusercontent.com/assets/1886834/12275565/eefdb894-b970-11e5-8caa-43624864c4bd.png
+[schema-image]: https://docs.google.com/drawings/d/1Xj20DzkaMYZc6zlPH8-F7wzlyap67vJCva6r0sKhDXM/pub?w=1440&h=493
