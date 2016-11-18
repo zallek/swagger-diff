@@ -1,15 +1,13 @@
 
 export default function editDescription({ kind, path, lhs, rhs }) {
   const match = kind === 'N'
-              && path.length >= 4
+              && path.length >= 2
               && path[path.length - 1] === 'description';
   if (match) {
-    const pathId = path[1];
-    const method = path[2];
+    const p = `/${path.slice(0, -1).join('/')}/`;
     return {
-      message: `${pathId} (${method}) - Description added: ${rhs}`,
-      path: pathId,
-      method,
+      message: `${p} - Description added: ${rhs}`,
+      descriptionPath: p,
       description: rhs,
     };
   }

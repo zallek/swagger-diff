@@ -1,0 +1,12 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "add-description",
+      "message": "/info/ - Description added: That description",
+      "description": "That description",
+      "descriptionPath": "/info/"
+    }
+  ],
+  "unmatchDiffs": []
+}
