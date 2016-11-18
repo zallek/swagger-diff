@@ -1,0 +1,13 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "edit-description",
+      "message": "/info/ - Description turned from Old description to New description",
+      "previousDescription": "Old description",
+      "currentDescription": "New description",
+      "descriptionPath": "/info/"
+    }
+  ],
+  "unmatchDiffs": []
+}
