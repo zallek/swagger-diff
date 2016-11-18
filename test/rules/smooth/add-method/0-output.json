@@ -1,0 +1,12 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "add-method",
+      "message": "/users/{username}/ (get) - Method added",
+      "path": "/users/{username}/",
+      "method": "get"
+    }
+  ],
+  "unmatchDiffs": []
+}

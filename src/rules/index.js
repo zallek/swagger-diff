@@ -8,6 +8,7 @@ export default {
     'add-required-object-property': require('./break/add-required-object-property.js'),
     'add-required-param': require('./break/add-required-param.js'),
     'delete-definition': require('./break/delete-definition.js'),
+    'delete-method': require('./break/delete-method.js'),
     'delete-operation-id': require('./break/delete-operation-id.js'),
     'delete-path': require('./break/delete-path.js'),
     'delete-produce': require('./break/delete-produce.js'),
@@ -27,6 +28,7 @@ export default {
   smooth: {
     'add-definition': require('./smooth/add-definition.js'),
     'add-description': require('./smooth/add-description.js'),
+    'add-method': require('./smooth/add-method.js'),
     'add-optional-object-property': require('./smooth/add-optional-object-property.js'),
     'add-optional-param': require('./smooth/add-optional-param.js'),
     'add-path': require('./smooth/add-path.js'),

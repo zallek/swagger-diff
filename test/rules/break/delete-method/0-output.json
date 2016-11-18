@@ -1,0 +1,12 @@
+{
+  "breaks": [
+    {
+      "ruleId": "delete-method",
+      "message": "/users/{username}/ (get) - Method deleted",
+      "path": "/users/{username}/",
+      "method": "get"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
