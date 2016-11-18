@@ -185,7 +185,7 @@ Exectute each rule on each raw diff to output breakings and smooth changes.
 ### Final diff
 Post process diffs to output errors, warnings, infos according to configuration and version change.
 
-**Note:** unmatchDiffs are the raw diffs that didn't much any rules. They can include breakings changes not implemented yet.
+**Note:** unmatchDiffs are the raw diffs that didn't much any rules. They can include breaking changes not implemented yet.
 
 
 [npm-url]: https://www.npmjs.com/package/swagger-diff
