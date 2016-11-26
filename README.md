@@ -65,17 +65,8 @@ Reference `swagger-diff.min.js` in your HTML and use the global variable `Swagge
   });
 </script>
 ```
-Or, if you're using AMD (Require.js), then import it into your module:
-```HTML
-<script src="node_modules/swagger-diff/dist/swagger-diff.min.js"></script>
-<script>
-  define(["SwaggerDiff"], function(SwaggerDiff) {
-    SwaggerDiff(oldSpec, newSpec, config).then(function (diff) {
-      // Handle result
-    });
-  })
-</script>
-```
+Hosted versions of swagger-diff releases are available on [JSDeliver CDN](http://www.jsdelivr.com/projects/swagger-diff).
+
 **Note:** in browser, `oldSpec` and `newSpec` can only be a URL or a plain object. `config` can only be a plain object.
 
 **Note**: Please refer to [How it works](#how-it-works) section for details about output.
