@@ -135,7 +135,7 @@ It's also possible to define different level of logs according to version change
 ```
 
 ### Configure specific rules
-You can also configure specific level of level for some rules.
+You can also configure specific level of logs for some rules.
 ```JSON
 {
   "rules": {
