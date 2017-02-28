@@ -12,15 +12,15 @@ export default function ({ errors, warnings, infos, unmatchDiffs }) {
   let output = 'swagger-diff\n';
 
   const errorColor = errors.length > 0 ? chalk.red : chalk.white;
-  output += errorColor(`Errors (${errors.length})\n`);
   if (errors.length > 0) {
+    output += errorColor(`Errors (${errors.length})\n`);
     output += errors.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n');
     output += '\n';
   }
 
   const warningColor = warnings.length > 0 ? chalk.yellow : chalk.white;
-  output += warningColor(`Warnings (${warnings.length})\n`);
   if (warnings.length > 0) {
+    output += warningColor(`Warnings (${warnings.length})\n`);
     output += warnings.map(diff => `${padSpaces(diff.ruleId, 30)}${diff.message}`).join('\n');
     output += '\n';
   }
