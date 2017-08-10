@@ -36,6 +36,7 @@ export default {
     'delete-object-property': require('./smooth/delete-object-property.js'),
     'delete-param': require('./smooth/delete-param.js'),
     'edit-description': require('./smooth/edit-description.js'),
+    'edit-example': require('./smooth/edit-example.js'),
     'edit-summary': require('./smooth/edit-summary.js'),
   },
 };
