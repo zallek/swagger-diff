@@ -1,0 +1,42 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Definition",
+    "version": "1.0.0",
+    "description": "Description of API"
+  },
+  "paths": {
+    "/collection/": {
+      "post": {
+        "responses": {
+          "201": {
+            "description": "Creates an item",
+            "examples": {
+              "application/json": [
+                {
+                  "id": "94c5e635-d7b4-48a1-ba62-a0948eb19078",
+                  "name": "aeiou"
+                }
+              ]
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

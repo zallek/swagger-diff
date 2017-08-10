@@ -1,0 +1,13 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "edit-example",
+      "message": "/collection/ (post) - Response 201 example changed",
+      "path": "/collection/",
+      "method": "post",
+      "responseId": "201"
+    }
+  ],
+  "unmatchDiffs": []
+}
