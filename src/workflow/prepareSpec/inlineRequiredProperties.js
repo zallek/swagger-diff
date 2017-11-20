@@ -17,7 +17,9 @@ export default function inlineRequiredProperties(spec) {
 
   if (spec.type === 'object' && spec.required && Array.isArray(spec.required)) {
     spec.required.forEach(requiredProperty => {
-      spec[PROPERTIES_KEY][requiredProperty].required = true;
+      if (spec[PROPERTIES_KEY]) {
+        spec[PROPERTIES_KEY][requiredProperty].required = true;
+      }
     });
     delete spec.required;
   }
