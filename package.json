@@ -46,6 +46,8 @@
     "commander": "^2.9.0",
     "debug": "^2.2.0",
     "deep-diff": "^0.3.3",
+    "extend": "^3.0.0",
+    "json-schema-ref-parser": "github:zallek/json-schema-ref-parser#v1",
     "jsonfile": "^2.2.3",
     "lodash.defaultsdeep": "^3.10.0",
     "lodash.foreach": "^3.0.3",
@@ -58,12 +60,10 @@
     "lodash.pick": "^3.1.0",
     "lodash.zipobject": "^3.0.0",
     "semver": "^5.0.3",
-    "swagger-parser": "^3.3.0",
-    "json-schema-ref-parser": "zallek/json-schema-ref-parser#v1",
-    "extend": "^3.0.0"
+    "swagger-parser": "^3.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.5.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.5.2",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.3",
@@ -83,9 +83,9 @@
     "mocha": "^2.2.5",
     "mock-local-storage": "^1.0.2",
     "require-all": "^2.0.0",
-    "rimraf": "^2.4.3",
+    "rimraf": "^2.6.3",
     "sinon": "^1.17.1",
-    "webpack": "^1.12.13",
+    "webpack": "^1.15.0",
     "yargs": "^3.5.3"
   },
   "bin": {

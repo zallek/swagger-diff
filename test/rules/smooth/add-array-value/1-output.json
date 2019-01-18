@@ -1,0 +1,15 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "add-array-value",
+      "message": "/test/ (get) - param enumParam - enumParam.Value4 enum value added",
+      "path": "/test/",
+      "method": "get",
+      "param": "enumParam",
+      "arrayName": "enumParam",
+      "arrayValue": "Value4"
+    }
+  ],
+  "unmatchDiffs": []
+}

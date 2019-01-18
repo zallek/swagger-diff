@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API"
+  },
+  "paths": {},
+  "definitions": {
+    "Definition.Path.Name": {
+      "type": "object",
+      "properties": {
+          "EnumProperty": {
+            "enum": [
+                "Value1",
+                "Value2",
+                "Value3"
+            ],
+            "type": "string"
+          }
+      }
+    }
+  }
+}

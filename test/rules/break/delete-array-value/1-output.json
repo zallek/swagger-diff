@@ -1,0 +1,15 @@
+{
+  "breaks": [
+    {
+      "ruleId": "delete-array-value",
+      "message": "/test/ (get) - param enumParam - enumParam.Value3 enum value deleted",
+      "path": "/test/",
+      "method": "get",
+      "param": "enumParam",
+      "arrayName": "enumParam",
+      "arrayValue": "Value3"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}

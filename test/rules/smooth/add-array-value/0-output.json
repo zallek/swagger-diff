@@ -1,0 +1,14 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "add-array-value",
+      "message": "definitions/Definition.Path.Name/properties - Object property - EnumProperty.Value4 enum value added",
+      "path": "definitions/Definition.Path.Name/properties",
+      "property": "EnumProperty",
+      "arrayName": "EnumProperty",
+      "arrayValue": "Value4"
+    }
+  ],
+  "unmatchDiffs": []
+}

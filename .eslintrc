@@ -14,5 +14,6 @@
     "no-unused-vars": [2, {"args": "none"}], // Allow unused argument definition in order to keep functions signatures self documented.
     "no-use-before-define": [2, "nofunc"],
     "quote-props": [2, "as-needed"],         // Disallow to quote properties (of object) when it's not requiered.
+    "max-len": 1 // Seems to be redundant to me.
    },
 }
