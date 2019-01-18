@@ -1,0 +1,14 @@
+{
+  "breaks": [
+    {
+      "ruleId": "delete-array-value",
+      "message": "definitions/Definition.Path.Name/properties - Object property - EnumProperty.Value3 enum value deleted",
+      "path": "definitions/Definition.Path.Name/properties",
+      "property": "EnumProperty",
+      "arrayName": "EnumProperty",
+      "arrayValue": "Value3"
+    }
+  ],
+  "smooths": [],
+  "unmatchDiffs": []
+}
