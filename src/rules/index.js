@@ -33,6 +33,7 @@ export default {
     'add-optional-param': require('./smooth/add-optional-param.js'),
     'add-path': require('./smooth/add-path.js'),
     'add-response': require('./smooth/add-response.js'),
+    'delete-description': require('./smooth/delete-description.js'),
     'delete-object-property': require('./smooth/delete-object-property.js'),
     'delete-param': require('./smooth/delete-param.js'),
     'edit-description': require('./smooth/edit-description.js'),
