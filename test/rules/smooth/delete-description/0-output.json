@@ -1,0 +1,12 @@
+{
+  "breaks": [],
+  "smooths": [
+    {
+      "ruleId": "delete-description",
+      "message": "/info/ - Description deleted: That description",
+      "description": "That description",
+      "descriptionPath": "/info/"
+    }
+  ],
+  "unmatchDiffs": []
+}
